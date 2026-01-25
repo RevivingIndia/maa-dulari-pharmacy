@@ -1,0 +1,31 @@
+.toast {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    background: var(--accent-color);
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-xl);
+    display: none;
+    align-items: center;
+    gap: 0.5rem;
+    z-index: 1001;
+    animation: slideInRight 0.3s ease-out;
+}
+
+.toast.show {
+    display: flex;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
