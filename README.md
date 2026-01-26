@@ -1,214 +1,128 @@
-# Dulari Health Care - WhatsApp-First Medical E-Commerce
+# Dulari Healthcare - Online Pharmacy Website
 
-A modern, healthcare-focused e-commerce React application designed for easy medicine ordering via WhatsApp.
+A modern, responsive React-based online pharmacy website similar to PharmEasy, Truemeds, and PillO.
 
-## 🎨 Design Theme
+## Features
 
-**MediaClaw Style** - Modern, clean, health-tech aesthetic with:
-- **Primary Color**: Emerald Green (#10b981)
-- **Accent Color**: WhatsApp Green (#25d366)
-- **Typography**: Inter (clean sans-serif)
-- **UI Feel**: Rounded cards, soft shadows, minimal clutter
+- ✅ **Header with Search Bar** - Search for medicines with a prominent search bar
+- ✅ **Hero Section with Slider** - Animated carousel showcasing key features
+- ✅ **Medicine Categories** - 12+ healthcare categories with icons
+- ✅ **WhatsApp Ordering** - Direct WhatsApp integration for easy ordering
+- ✅ **E-commerce Features** - Online shopping capabilities
+- ✅ **India Map with Delivery Coverage** - Animated map showing 1200+ cities and 19,000+ pin codes
+- ✅ **Taglines Section** - Three key brand messages:
+  - ❤️ Emotion: Dawa Bhi • Dua Bhi
+  - 🤝 Trust: Bharosa Har Dawa Mein
+  - 🏥 Professional: Trusted Medicines with Care
+- ✅ **Responsive Design** - Works on all devices (mobile, tablet, desktop)
+- ✅ **Modern UI/UX** - Built with Tailwind CSS for beautiful, modern design
 
-## ✨ Features
+## Tech Stack
 
-### Core Functionality
-- ✅ WhatsApp-based ordering (primary action)
-- ✅ Medicine search with auto-suggestions
-- ✅ Category-based browsing
-- ✅ Product listings with details
-- ✅ Mobile-first responsive design
-- ✅ Sticky WhatsApp button
-- ✅ Smooth animations and micro-interactions
-- ✅ React-based component architecture
+- **React 18** - Modern React with hooks
+- **Vite** - Fast build tool and dev server
+- **Tailwind CSS** - Utility-first CSS framework
+- **Swiper** - Modern slider/carousel library
+- **React Icons** - Beautiful icon library
 
-### Sections
-1. **Hero Section** - Prominent WhatsApp CTA
-2. **Search Bar** - Real-time medicine search
-3. **Categories** - 8 medical categories
-4. **Product Listings** - Medicine cards with WhatsApp ordering
-5. **How It Works** - 3-step process guide
-6. **Trust & Compliance** - Trust badges
-7. **Footer** - Contact information and links
+## Installation
 
-## 🚀 Getting Started
-
-### Prerequisites
-- Node.js (v14 or higher)
-- npm or yarn
-
-### Installation
-
-1. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-2. **Start development server**
-   ```bash
-   npm start
-   ```
-   The app will open at [http://localhost:3000](http://localhost:3000)
-
-3. **Build for production**
-   ```bash
-   npm run build
-   ```
-
-## 🔧 Configuration
-
-### WhatsApp Number
-Update the WhatsApp number in `src/data/medicines.js`:
-
-```javascript
-export const WHATSAPP_NUMBER = '919876543210'; // Replace with your actual number
+1. Install dependencies:
+```bash
+npm install
 ```
 
-**Format**: Country code + number without + sign
-- Example: `919876543210` for Indian number +91 98765 43210
+2. Start the development server:
+```bash
+npm run dev
+```
 
-### Contact Information
-Update footer contact details in `src/components/Footer.js`:
-- Phone number
-- Address
-- Any other contact information
+3. Open your browser and navigate to `http://localhost:5173`
 
-## 📁 Project Structure
+## Build for Production
+
+```bash
+npm run build
+```
+
+The built files will be in the `dist` folder.
+
+## Project Structure
 
 ```
 dulari-healthcare/
-├── public/
-│   └── index.html          # HTML template
 ├── src/
-│   ├── components/         # React components
-│   │   ├── Navbar.js
-│   │   ├── Hero.js
-│   │   ├── SearchSection.js
-│   │   ├── Categories.js
-│   │   ├── Products.js
-│   │   ├── ProductCard.js
-│   │   ├── HowItWorks.js
-│   │   ├── TrustSection.js
-│   │   ├── Footer.js
-│   │   ├── StickyWhatsApp.js
-│   │   └── Toast.js
-│   ├── data/
-│   │   └── medicines.js    # Sample data & config
-│   ├── styles/             # CSS files
-│   │   ├── index.css      # Global styles
-│   │   ├── App.css
-│   │   └── [Component].css
-│   ├── App.js              # Main app component
-│   └── index.js            # Entry point
+│   ├── components/
+│   │   ├── Header.jsx          # Header with search and navigation
+│   │   ├── Hero.jsx            # Hero section with slider
+│   │   ├── Taglines.jsx       # Brand taglines section
+│   │   ├── Categories.jsx     # Medicine categories grid
+│   │   ├── DeliveryMap.jsx    # India map with delivery coverage
+│   │   └── WhatsAppOrder.jsx  # WhatsApp ordering section
+│   ├── App.jsx                # Main app component
+│   ├── main.jsx              # React entry point
+│   └── index.css             # Global styles with Tailwind
+├── index.html
 ├── package.json
-└── README.md
+├── vite.config.js
+├── tailwind.config.js
+└── postcss.config.js
 ```
 
-## 📱 Mobile-First Design
+## Customization
 
-- Fully responsive across all devices
-- Touch-friendly buttons (minimum 44px)
-- Sticky WhatsApp button on mobile
-- Optimized for fast loading
-- Simple, clear navigation
-
-## 🎯 Key Interactions
-
-1. **WhatsApp Ordering**
-   - Click any "Order on WhatsApp" button
-   - Toast notification appears
-   - Redirects to WhatsApp with pre-filled message
-
-2. **Search**
-   - Real-time filtering
-   - Auto-suggestions
-   - Category-based filtering
-
-3. **Animations**
-   - Pulse effect on WhatsApp buttons
-   - Hover glow on cards
-   - Smooth scroll transitions
-   - Fade-in animations on scroll
-
-## 📦 Sample Data
-
-The application includes sample medicine data. To customize:
-
-1. Edit the `medicines` array in `src/data/medicines.js`
-2. Add/remove products as needed
-3. Update categories in `src/components/Categories.js` if needed
-
-## 🎨 Customization
-
-### Colors
-Edit CSS variables in `src/styles/index.css`:
-
-```css
-:root {
-    --primary-color: #10b981; /* Emerald Green */
-    --accent-color: #25d366; /* WhatsApp Green */
-    /* ... more variables */
-}
+### Update WhatsApp Number
+Edit `src/components/WhatsAppOrder.jsx` and change the `phoneNumber` state:
+```javascript
+const [phoneNumber] = useState('919876543210') // Your WhatsApp number
 ```
 
-### Content
-- Update text in component files
-- Modify product data in `src/data/medicines.js`
-- Add/remove sections as needed
+### Update Contact Information
+Edit the contact details in `src/components/WhatsAppOrder.jsx`:
+- Phone number
+- Email address
+- WhatsApp number
 
-## 🔧 Available Scripts
+### Modify Categories
+Edit `src/components/Categories.jsx` to add, remove, or modify medicine categories.
 
-- `npm start` - Runs the app in development mode
-- `npm run build` - Builds the app for production
-- `npm test` - Launches the test runner
-- `npm run eject` - Ejects from Create React App (one-way operation)
+### Change Hero Slides
+Edit the `slides` array in `src/components/Hero.jsx` to customize the carousel content.
 
-## 📄 Browser Support
+## Features in Detail
+
+### Header Component
+- Responsive navigation menu
+- Search bar with submit button
+- Shopping cart icon
+- User login button
+- Mobile-friendly hamburger menu
+
+### Hero Section
+- Auto-playing carousel (4 slides)
+- Navigation arrows and pagination dots
+- Responsive design
+- Call-to-action buttons
+
+### Delivery Map
+- Animated India map visualization
+- City markers with animation
+- Delivery statistics (1200+ cities, 19,000+ pin codes)
+- List of major cities with checkmarks
+
+### WhatsApp Ordering
+- Direct WhatsApp integration
+- Custom message input
+- Step-by-step ordering process
+- Contact options (Phone, WhatsApp, Email)
+
+## Browser Support
 
 - Chrome (latest)
 - Firefox (latest)
 - Safari (latest)
 - Edge (latest)
-- Mobile browsers (iOS Safari, Chrome Mobile)
 
-## 🚨 Important
+## License
 
-⚠️ **Before going live:**
-1. Replace sample WhatsApp number with actual number
-2. Update contact information in Footer component
-3. Replace sample medicine data with real inventory
-4. Add actual product images (currently using icons)
-5. Test WhatsApp integration thoroughly
-6. Ensure compliance with local pharmacy regulations
-7. Build and deploy the production build
-
-## 📝 Notes
-
-- **React 18** - Built with modern React
-- **No backend required** - Pure frontend application
-- **WhatsApp integration** - Uses WhatsApp Web API
-- **No login required** - Direct ordering via WhatsApp
-- **Prescription disclaimer** - Included in footer
-
-## 🚀 Deployment
-
-### Build for Production
-```bash
-npm run build
-```
-
-This creates an optimized production build in the `build` folder.
-
-### Deploy Options
-- **Netlify**: Connect your GitHub repo or drag & drop the `build` folder
-- **Vercel**: Connect your GitHub repo
-- **GitHub Pages**: Use `gh-pages` package
-- **Any static hosting**: Upload the `build` folder
-
-## 📞 Support
-
-For questions or customization help, refer to the code comments or modify as per your requirements.
-
----
-
-**Built with ❤️ for Dulari Health Care using React**
+This project is created for Dulari Healthcare.
