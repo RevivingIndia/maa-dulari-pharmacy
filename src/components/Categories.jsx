@@ -31,11 +31,11 @@ const Categories = () => {
   ]
 
   return (
-    <section className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4">
+    <section className="py-8 sm:py-12 md:py-16 bg-gray-50">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">Shop by Categories</h2>
-          <p className="text-gray-600 text-lg">Find all your healthcare needs in one place</p>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-4 px-4">Shop by Categories</h2>
+          <p className="text-gray-600 text-sm sm:text-base md:text-lg px-4">Find all your healthcare needs in one place</p>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
           {categories.map((category, index) => (

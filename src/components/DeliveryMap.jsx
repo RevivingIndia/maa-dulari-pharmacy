@@ -42,13 +42,13 @@ const DeliveryMap = () => {
   const latToY = (lat) => 1200 - ((lat - 6) / (37 - 6)) * 1200
 
   return (
-    <section className="py-16 bg-white">
-      <div className="container mx-auto px-4">
+    <section className="py-8 sm:py-12 md:py-16 bg-white">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-4">
             We've Got India Covered!
           </h2>
-          <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+          <p className="text-gray-600 text-sm sm:text-base md:text-lg max-w-3xl mx-auto px-4">
             We now deliver in <span className="font-bold text-blue-600">1200+ cities</span> and
             towns across <span className="font-bold text-blue-600">19,000+ pin codes</span>. We
             thereby cover every nook and corner of the country!
@@ -59,7 +59,7 @@ const DeliveryMap = () => {
           {/* India Map Visualization */}
           <div className="relative">
             <div className="bg-gradient-to-br from-blue-50 to-green-50 rounded-2xl p-8 shadow-lg">
-              <div className="relative h-[600px] flex items-center justify-center overflow-hidden">
+              <div className="relative h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] flex items-center justify-center overflow-hidden">
                 {/* Complete India Map - Embedded from Wikimedia Commons */}
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/India_map_en.svg/1000px-India_map_en.svg.png"
@@ -307,17 +307,17 @@ const DeliveryMap = () => {
           <div>
             <div className="bg-blue-600 text-white rounded-lg p-6 mb-6">
               <div className="flex items-center space-x-4 mb-4">
-                <FaTruck className="text-4xl" />
+                <FaTruck className="text-2xl sm:text-3xl md:text-4xl" />
                 <div>
-                  <div className="text-3xl font-bold">1200+</div>
-                  <div className="text-lg">Cities & Towns</div>
+                  <div className="text-xl sm:text-2xl md:text-3xl font-bold">1200+</div>
+                  <div className="text-sm sm:text-base md:text-lg">Cities & Towns</div>
                 </div>
               </div>
               <div className="flex items-center space-x-4">
-                <FaMapMarkerAlt className="text-4xl" />
+                <FaMapMarkerAlt className="text-2xl sm:text-3xl md:text-4xl" />
                 <div>
-                  <div className="text-3xl font-bold">19,000+</div>
-                  <div className="text-lg">Pin Codes</div>
+                  <div className="text-xl sm:text-2xl md:text-3xl font-bold">19,000+</div>
+                  <div className="text-sm sm:text-base md:text-lg">Pin Codes</div>
                 </div>
               </div>
             </div>
@@ -326,7 +326,7 @@ const DeliveryMap = () => {
               <h3 className="text-xl font-bold text-gray-800 mb-4">
                 Major Cities We Deliver To:
               </h3>
-              <div className="grid grid-cols-2 gap-3 max-h-96 overflow-y-auto">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 gap-2 sm:gap-3 max-h-64 sm:max-h-80 md:max-h-96 overflow-y-auto">
                 {cities.map((city, index) => (
                   <div
                     key={city.name}

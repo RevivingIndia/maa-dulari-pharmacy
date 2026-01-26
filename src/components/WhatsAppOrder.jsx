@@ -1,43 +1,189 @@
-import React, { useState } from 'react'
-import { FaWhatsapp, FaShoppingCart, FaPhone, FaEnvelope } from 'react-icons/fa'
+import React, { useState, useEffect, useMemo, useRef } from 'react'
+import { FaWhatsapp, FaPhone, FaEnvelope, FaHandshake } from 'react-icons/fa'
 
 const WhatsAppOrder = () => {
-  const [phoneNumber] = useState('919876543210') // Replace with actual WhatsApp number
+  const [phoneNumber] = useState('919876543210')
   const [message, setMessage] = useState('')
+  const [currentStep, setCurrentStep] = useState(0)
+  const [showMessages, setShowMessages] = useState([])
+  const chatContainerRef = useRef(null)
+
+  const conversationSteps = useMemo(() => [
+    { sender: 'user', text: 'Hello, I need to order medicines', delay: 1000 },
+    { sender: 'pharmacy', text: 'Namaste! Welcome to Maa Dulari Pharmacy 👋\nHow can I help you today?', delay: 2000 },
+    { sender: 'user', text: 'I have a prescription. Can I send it?', delay: 3000 },
+    { sender: 'pharmacy', text: 'Yes, please share your prescription. We will confirm availability and pricing.', delay: 4000 },
+    { sender: 'user', text: '📷 [Prescription Image]', delay: 5000 },
+    { sender: 'pharmacy', text: 'Thank you! We have all medicines in stock.\nTotal: ₹1,250\nDelivery: Free\nETA: 2 hours\nProceed?', delay: 6000 },
+    { sender: 'user', text: 'Yes, please confirm the order', delay: 7000 },
+    { sender: 'pharmacy', text: '✅ Order Confirmed!\nOrder ID: #MD12345\nYour medicines will be delivered soon.\nThank you for choosing Maa Dulari Pharmacy! 🙏', delay: 8000 },
+  ], [])
+
+  useEffect(() => {
+    if (currentStep >= conversationSteps.length) {
+      // Reset after showing all messages
+      const resetTimer = setTimeout(() => {
+        setCurrentStep(0)
+        setShowMessages([])
+      }, 3000)
+      return () => clearTimeout(resetTimer)
+    }
+
+    const timer = setTimeout(() => {
+      setShowMessages((prev) => [...prev, conversationSteps[currentStep]])
+      setCurrentStep((prev) => prev + 1)
+    }, conversationSteps[currentStep]?.delay || 1000)
+
+    return () => clearTimeout(timer)
+  }, [currentStep, conversationSteps])
+
+  // Auto-scroll to bottom when new messages are added
+  useEffect(() => {
+    if (chatContainerRef.current) {
+      chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight
+    }
+  }, [showMessages])
 
   const handleWhatsAppOrder = () => {
-    const defaultMessage = 'Hello, I would like to order medicines from Dulari Healthcare.'
+    const defaultMessage = 'Hello, I would like to order medicines from Maa Dulari Pharmacy.'
     const finalMessage = message || defaultMessage
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(finalMessage)}`
     window.open(whatsappUrl, '_blank')
   }
 
   return (
-    <section className="py-16 bg-gradient-to-br from-green-50 to-blue-50">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <div className="inline-block bg-green-500 rounded-full p-4 mb-4">
-              <FaWhatsapp className="text-6xl text-white" />
+    <section className="py-8 sm:py-12 md:py-16 bg-gradient-to-br from-green-50 to-blue-50 medical-bg-pills relative">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        <div className="max-w-6xl mx-auto">
+          {/* Trust Line */}
+          <div className="text-center mb-8">
+            <div className="inline-flex items-center gap-3 bg-white px-6 py-3 rounded-full shadow-lg mb-6">
+              <FaHandshake className="text-blue-500 text-2xl" />
+              <span className="text-2xl font-bold text-gray-800">Bharosa Har Dawa Mein</span>
             </div>
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">
+          </div>
+
+          <div className="text-center mb-12">
+            <div className="inline-block bg-green-500 rounded-full p-3 md:p-4 mb-4">
+              <FaWhatsapp className="text-4xl md:text-6xl text-white" />
+            </div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-4">
               Order Medicines via WhatsApp
             </h2>
-            <p className="text-gray-600 text-lg">
+            <p className="text-gray-600 text-sm sm:text-base md:text-lg">
               Quick and easy ordering through WhatsApp. Just send us your prescription or medicine list!
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* WhatsApp Order Card */}
-            <div className="bg-white rounded-2xl shadow-xl p-8">
+          <div className="grid md:grid-cols-2 gap-8 items-start">
+            {/* Mobile WhatsApp Animation */}
+            <div className="order-2 md:order-1">
+              <div className="bg-gray-900 rounded-[2rem] sm:rounded-[3rem] p-2 sm:p-4 shadow-2xl max-w-xs sm:max-w-sm mx-auto">
+                {/* Phone Frame */}
+                <div className="bg-white rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden">
+                  {/* Status Bar */}
+                  <div className="bg-green-600 text-white px-4 py-2 flex items-center justify-between text-xs">
+                    <div className="flex items-center gap-2">
+                      <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center">
+                        <FaWhatsapp className="text-green-600 text-sm" />
+                      </div>
+                      <div>
+                        <div className="font-semibold">Maa Dulari Pharmacy</div>
+                        <div className="text-xs opacity-90">online</div>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <div className="w-1 h-1 bg-white rounded-full"></div>
+                      <div className="w-1 h-1 bg-white rounded-full"></div>
+                      <div className="w-1 h-1 bg-white rounded-full"></div>
+                    </div>
+                  </div>
+
+                  {/* Chat Messages */}
+                  <div 
+                    ref={chatContainerRef}
+                    className="bg-gray-100 h-[350px] sm:h-[400px] md:h-[500px] p-3 sm:p-4 overflow-y-auto flex flex-col gap-2 sm:gap-3 scroll-smooth"
+                  >
+                    {/* Welcome Message */}
+                    <div className="bg-green-100 rounded-lg p-3 self-start max-w-[80%]">
+                      <div className="text-sm text-gray-800">
+                        <strong>Maa Dulari Pharmacy</strong>
+                      </div>
+                      <div className="text-sm text-gray-700 mt-1">
+                        Namaste! Welcome to Maa Dulari Pharmacy 👋
+                      </div>
+                      <div className="text-xs text-gray-500 mt-2">
+                        Bharosa Har Dawa Mein
+                      </div>
+                    </div>
+
+                    {/* Animated Messages */}
+                    {showMessages.map((msg, index) => (
+                      <div
+                        key={index}
+                        className={`rounded-lg p-3 max-w-[80%] ${
+                          msg.sender === 'user'
+                            ? 'bg-green-500 text-white self-end ml-auto'
+                            : 'bg-white text-gray-800 self-start shadow-sm'
+                        }`}
+                        style={{
+                          animation: 'fade-in-up 0.5s ease-out',
+                        }}
+                      >
+                        <div className="text-sm whitespace-pre-wrap">{msg.text}</div>
+                        <div
+                          className={`text-xs mt-1 ${
+                            msg.sender === 'user' ? 'text-green-100' : 'text-gray-400'
+                          }`}
+                        >
+                          {new Date().toLocaleTimeString('en-US', {
+                            hour: '2-digit',
+                            minute: '2-digit',
+                          })}
+                        </div>
+                      </div>
+                    ))}
+
+                    {/* Typing Indicator */}
+                    {currentStep < conversationSteps.length && (
+                      <div className="bg-white rounded-lg p-3 self-start shadow-sm">
+                        <div className="flex gap-1">
+                          <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
+                          <div
+                            className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
+                            style={{ animationDelay: '0.2s' }}
+                          ></div>
+                          <div
+                            className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
+                            style={{ animationDelay: '0.4s' }}
+                          ></div>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Input Area */}
+                  <div className="bg-white border-t border-gray-200 p-3 flex items-center gap-2">
+                    <div className="flex-1 bg-gray-100 rounded-full px-4 py-2 text-sm text-gray-500">
+                      Type a message...
+                    </div>
+                    <button className="bg-green-500 text-white rounded-full p-2">
+                      <FaWhatsapp className="text-xl" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Order Steps Card */}
+            <div className="order-1 md:order-2 bg-white rounded-2xl shadow-xl p-8">
               <div className="flex items-center space-x-4 mb-6">
                 <div className="bg-green-500 rounded-full p-3">
                   <FaWhatsapp className="text-3xl text-white" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-gray-800">WhatsApp Order</h3>
-                  <p className="text-gray-600">Fast & Convenient</p>
+                  <h3 className="text-2xl font-bold text-gray-800">How to Order</h3>
+                  <p className="text-gray-600">Simple 3-step process</p>
                 </div>
               </div>
 
@@ -89,54 +235,10 @@ const WhatsAppOrder = () => {
 
               <button
                 onClick={handleWhatsAppOrder}
-                className="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-6 rounded-lg transition-colors flex items-center justify-center space-x-2"
+                className="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-6 rounded-lg transition-colors flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl transform hover:scale-105"
               >
                 <FaWhatsapp className="text-2xl" />
                 <span>Order via WhatsApp</span>
-              </button>
-            </div>
-
-            {/* E-commerce Features */}
-            <div className="bg-white rounded-2xl shadow-xl p-8">
-              <div className="flex items-center space-x-4 mb-6">
-                <div className="bg-blue-500 rounded-full p-3">
-                  <FaShoppingCart className="text-3xl text-white" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-gray-800">Online Store</h3>
-                  <p className="text-gray-600">Shop Anytime, Anywhere</p>
-                </div>
-              </div>
-
-              <div className="space-y-4 mb-6">
-                <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
-                  <FaShoppingCart className="text-blue-500" />
-                  <span className="text-gray-800">Browse 25,000+ Products</span>
-                </div>
-                <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
-                  <FaShoppingCart className="text-blue-500" />
-                  <span className="text-gray-800">Secure Online Payment</span>
-                </div>
-                <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
-                  <FaShoppingCart className="text-blue-500" />
-                  <span className="text-gray-800">Track Your Orders</span>
-                </div>
-                <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
-                  <FaShoppingCart className="text-blue-500" />
-                  <span className="text-gray-800">Easy Returns & Refunds</span>
-                </div>
-                <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
-                  <FaShoppingCart className="text-blue-500" />
-                  <span className="text-gray-800">Prescription Upload</span>
-                </div>
-                <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
-                  <FaShoppingCart className="text-blue-500" />
-                  <span className="text-gray-800">Medicine Reminders</span>
-                </div>
-              </div>
-
-              <button className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-4 px-6 rounded-lg transition-colors">
-                Shop Now
               </button>
             </div>
           </div>

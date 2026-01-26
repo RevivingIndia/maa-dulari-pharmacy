@@ -57,7 +57,7 @@ const Hero = () => {
         }}
         navigation={true}
         loop={true}
-        className="h-[500px] md:h-[600px]"
+        className="h-[400px] sm:h-[450px] md:h-[500px] lg:h-[600px]"
       >
         {slides.map((slide) => (
           <SwiperSlide key={slide.id}>
@@ -65,16 +65,16 @@ const Hero = () => {
               <div className="container mx-auto px-4">
                 <div className="grid md:grid-cols-2 gap-8 items-center">
                   <div className="text-white">
-                    <div className="mb-6 flex justify-center md:justify-start">
-                      {slide.icon}
+                    <div className="mb-4 md:mb-6 flex justify-center md:justify-start">
+                      <div className="text-4xl md:text-6xl">{slide.icon}</div>
                     </div>
-                    <h2 className="text-4xl md:text-6xl font-bold mb-4">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-4">
                       {slide.title}
                     </h2>
-                    <p className="text-xl md:text-2xl mb-4 opacity-90">
+                    <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-4 opacity-90">
                       {slide.subtitle}
                     </p>
-                    <p className="text-lg mb-6 opacity-80">
+                    <p className="text-sm sm:text-base md:text-lg mb-6 opacity-80">
                       {slide.description}
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4">
