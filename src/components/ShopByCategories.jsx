@@ -6,22 +6,22 @@ const ShopByCategories = () => {
   const [isPaused, setIsPaused] = useState(false)
 
   const categories = [
-    { name: 'Winter Store', icon: FaSnowflake, color: 'from-blue-400 to-cyan-500', bgColor: 'bg-blue-50' },
-    { name: 'Vitamin Store', icon: FaCapsules, color: 'from-yellow-400 to-orange-500', bgColor: 'bg-yellow-50' },
-    { name: 'Sexual Wellness', icon: FaHeart, color: 'from-pink-400 to-red-500', bgColor: 'bg-pink-50' },
-    { name: 'Personal Care', icon: FaFlask, color: 'from-purple-400 to-indigo-500', bgColor: 'bg-purple-50' },
-    { name: 'Health Concerns', icon: FaStethoscope, color: 'from-green-400 to-emerald-500', bgColor: 'bg-green-50' },
-    { name: 'Health Food & Drinks', icon: FaAppleAlt, color: 'from-green-500 to-lime-500', bgColor: 'bg-green-50' },
-    { name: 'Diabetes Essentials', icon: FaHeartbeat, color: 'from-red-400 to-pink-500', bgColor: 'bg-red-50' },
-    { name: 'Heart Care', icon: FaHeartbeat, color: 'from-red-500 to-rose-500', bgColor: 'bg-red-50' },
+    { name: 'Winter Store', icon: FaSnowflake, color: 'from-blue-500 to-cyan-500', bgColor: 'bg-blue-50' },
+    { name: 'Vitamin Store', icon: FaCapsules, color: 'from-teal-500 to-cyan-500', bgColor: 'bg-teal-50' },
+    { name: 'Sexual Wellness', icon: FaHeart, color: 'from-blue-500 to-teal-500', bgColor: 'bg-blue-50' },
+    { name: 'Personal Care', icon: FaFlask, color: 'from-cyan-500 to-teal-500', bgColor: 'bg-cyan-50' },
+    { name: 'Health Concerns', icon: FaStethoscope, color: 'from-teal-500 to-green-500', bgColor: 'bg-teal-50' },
+    { name: 'Health Food & Drinks', icon: FaAppleAlt, color: 'from-green-500 to-teal-500', bgColor: 'bg-green-50' },
+    { name: 'Diabetes Essentials', icon: FaHeartbeat, color: 'from-blue-600 to-teal-600', bgColor: 'bg-blue-50' },
+    { name: 'Heart Care', icon: FaHeartbeat, color: 'from-teal-600 to-cyan-600', bgColor: 'bg-teal-50' },
     { name: 'Ayurvedic Care', icon: FaLeaf, color: 'from-green-500 to-teal-500', bgColor: 'bg-green-50' },
-    { name: 'Mother & Baby Care', icon: FaBaby, color: 'from-pink-400 to-rose-500', bgColor: 'bg-pink-50' },
-    { name: 'Mobility & Elderly Care', icon: FaWheelchair, color: 'from-gray-400 to-slate-500', bgColor: 'bg-gray-50' },
-    { name: 'Sports Nutrition', icon: FaDumbbell, color: 'from-orange-400 to-amber-500', bgColor: 'bg-orange-50' },
-    { name: 'Healthcare Devices', icon: FaStethoscope, color: 'from-blue-500 to-indigo-500', bgColor: 'bg-blue-50' },
-    { name: 'Skin Care', icon: FaBandAid, color: 'from-pink-500 to-fuchsia-500', bgColor: 'bg-pink-50' },
-    { name: 'Eye Care', icon: FaEye, color: 'from-indigo-400 to-purple-500', bgColor: 'bg-indigo-50' },
-    { name: 'Explore More', icon: FaCapsules, color: 'from-gray-400 to-gray-600', bgColor: 'bg-gray-50' },
+    { name: 'Mother & Baby Care', icon: FaBaby, color: 'from-cyan-500 to-blue-500', bgColor: 'bg-cyan-50' },
+    { name: 'Mobility & Elderly Care', icon: FaWheelchair, color: 'from-teal-500 to-blue-500', bgColor: 'bg-teal-50' },
+    { name: 'Sports Nutrition', icon: FaDumbbell, color: 'from-blue-500 to-teal-500', bgColor: 'bg-blue-50' },
+    { name: 'Healthcare Devices', icon: FaStethoscope, color: 'from-teal-600 to-cyan-600', bgColor: 'bg-teal-50' },
+    { name: 'Skin Care', icon: FaBandAid, color: 'from-cyan-500 to-teal-500', bgColor: 'bg-cyan-50' },
+    { name: 'Eye Care', icon: FaEye, color: 'from-blue-500 to-cyan-500', bgColor: 'bg-blue-50' },
+    { name: 'Explore More', icon: FaCapsules, color: 'from-teal-500 to-blue-500', bgColor: 'bg-teal-50' },
   ]
 
   useEffect(() => {

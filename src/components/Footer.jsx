@@ -133,15 +133,15 @@ const Footer = () => {
             {/* Taglines */}
             <div className="space-y-2 mt-6">
               <div className="flex items-center gap-2 text-sm">
-                <FaHeart className="text-red-400" />
+                <FaHeart className="text-blue-500" />
                 <span>Dawa Bhi • Dua Bhi</span>
               </div>
               <div className="flex items-center gap-2 text-sm">
-                <FaHeart className="text-blue-400" />
+                <FaHeart className="text-teal-500" />
                 <span>Bharosa Har Dawa Mein</span>
               </div>
               <div className="flex items-center gap-2 text-sm">
-                <FaHeart className="text-green-400" />
+                <FaHeart className="text-cyan-500" />
                 <span>Trusted Medicines with Care</span>
               </div>
             </div>
@@ -256,7 +256,7 @@ const Footer = () => {
             </div>
             <div className="flex items-center gap-1">
               <span>Made with</span>
-              <FaHeart className="text-red-500 mx-1" />
+              <FaHeart className="text-teal-500 mx-1" />
               <span>in India</span>
             </div>
             <div>

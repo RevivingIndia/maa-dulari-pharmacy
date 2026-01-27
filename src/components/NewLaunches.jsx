@@ -19,7 +19,7 @@ const NewLaunches = () => {
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-1 sm:mb-2">New Launches</h2>
             <p className="text-gray-600 text-sm sm:text-base">Latest products just for you</p>
           </div>
-          <button className="hidden md:block px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+          <button className="hidden md:block px-6 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition-colors">
             View All
           </button>
         </div>
@@ -31,15 +31,15 @@ const NewLaunches = () => {
               className="bg-white rounded-lg sm:rounded-xl p-2 sm:p-3 md:p-4 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 group"
             >
               <div className="relative mb-2 sm:mb-3">
-                <div className="w-full h-24 sm:h-28 md:h-32 bg-gradient-to-br from-blue-50 to-green-50 rounded-lg flex items-center justify-center text-3xl sm:text-4xl md:text-5xl">
+                <div className="w-full h-24 sm:h-28 md:h-32 bg-gradient-to-br from-blue-50 to-teal-50 rounded-lg flex items-center justify-center text-3xl sm:text-4xl md:text-5xl">
                   {product.image}
                 </div>
-                <span className="absolute top-1 right-1 sm:top-2 sm:right-2 bg-red-500 text-white text-[10px] sm:text-xs font-bold px-1.5 sm:px-2 py-0.5 sm:py-1 rounded">
+                <span className="absolute top-1 right-1 sm:top-2 sm:right-2 bg-teal-600 text-white text-[10px] sm:text-xs font-bold px-1.5 sm:px-2 py-0.5 sm:py-1 rounded">
                   {product.discount} OFF
                 </span>
               </div>
               
-              <h3 className="font-semibold text-gray-800 text-xs sm:text-sm mb-1 sm:mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors min-h-[2.5rem] sm:min-h-[3rem]">
+              <h3 className="font-semibold text-gray-800 text-xs sm:text-sm mb-1 sm:mb-2 line-clamp-2 group-hover:text-teal-600 transition-colors min-h-[2.5rem] sm:min-h-[3rem]">
                 {product.name}
               </h3>
               

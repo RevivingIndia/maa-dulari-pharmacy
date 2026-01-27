@@ -16,18 +16,18 @@ import {
 
 const Categories = () => {
   const categories = [
-    { name: 'Prescription Medicines', icon: <FaPills />, color: 'bg-blue-500' },
-    { name: 'Heart Care', icon: <FaHeartbeat />, color: 'bg-red-500' },
-    { name: 'Baby Care', icon: <FaBaby />, color: 'bg-pink-500' },
-    { name: 'Vitamins & Supplements', icon: <FaFlask />, color: 'bg-yellow-500' },
-    { name: 'Diabetes Care', icon: <FaStethoscope />, color: 'bg-green-500' },
-    { name: 'Pain Relief', icon: <FaCapsules />, color: 'bg-orange-500' },
-    { name: 'First Aid', icon: <FaBandAid />, color: 'bg-red-400' },
-    { name: 'Eye Care', icon: <FaEye />, color: 'bg-indigo-500' },
-    { name: 'Respiratory Care', icon: <FaLungs />, color: 'bg-cyan-500' },
-    { name: 'Mental Wellness', icon: <FaBrain />, color: 'bg-purple-500' },
-    { name: 'Bone & Joint Care', icon: <FaBone />, color: 'bg-gray-500' },
-    { name: 'Injection Supplies', icon: <FaSyringe />, color: 'bg-teal-500' },
+    { name: 'Prescription Medicines', icon: <FaPills />, color: 'bg-blue-600' },
+    { name: 'Heart Care', icon: <FaHeartbeat />, color: 'bg-teal-600' },
+    { name: 'Baby Care', icon: <FaBaby />, color: 'bg-cyan-500' },
+    { name: 'Vitamins & Supplements', icon: <FaFlask />, color: 'bg-teal-500' },
+    { name: 'Diabetes Care', icon: <FaStethoscope />, color: 'bg-green-600' },
+    { name: 'Pain Relief', icon: <FaCapsules />, color: 'bg-blue-500' },
+    { name: 'First Aid', icon: <FaBandAid />, color: 'bg-cyan-600' },
+    { name: 'Eye Care', icon: <FaEye />, color: 'bg-teal-500' },
+    { name: 'Respiratory Care', icon: <FaLungs />, color: 'bg-cyan-600' },
+    { name: 'Mental Wellness', icon: <FaBrain />, color: 'bg-blue-500' },
+    { name: 'Bone & Joint Care', icon: <FaBone />, color: 'bg-teal-600' },
+    { name: 'Injection Supplies', icon: <FaSyringe />, color: 'bg-cyan-500' },
   ]
 
   return (

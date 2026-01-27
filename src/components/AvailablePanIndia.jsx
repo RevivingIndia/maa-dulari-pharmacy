@@ -1,0 +1,147 @@
+import React from 'react'
+import { FaMapMarkerAlt, FaStore, FaTruck } from 'react-icons/fa'
+
+const statistics = [
+  {
+    id: 1,
+    icon: <FaMapMarkerAlt className="text-xl text-white" />,
+    number: '100+',
+    label: 'Cities Covered',
+  },
+  {
+    id: 2,
+    icon: <FaStore className="text-xl text-white" />,
+    number: '170+',
+    label: 'Partner Pharmacies',
+  },
+  {
+    id: 3,
+    icon: <FaTruck className="text-xl text-white" />,
+    number: '25k+',
+    label: 'Orders Delivered',
+  },
+]
+
+// India Map Component
+// Note: For best accuracy, consider using an actual India map SVG file
+// You can download one from: https://simplemaps.com/svg/country/in
+// or use a public India map SVG and embed it here
+const IndiaMap = () => {
+  // Using a simplified but recognizable India outline
+  // For production, replace this with an actual India map SVG file
+  return (
+    <svg
+      viewBox="0 0 1000 1200"
+      className="w-full h-auto"
+      xmlns="http://www.w3.org/2000/svg"
+      preserveAspectRatio="xMidYMid meet"
+    >
+      <defs>
+        <style>{`
+          .india-state { fill: #0A0F4A; stroke: #FFFFFF; stroke-width: 0.8; }
+        `}</style>
+      </defs>
+      <g className="india-state">
+        {/* Main India outline - simplified representation */}
+        {/* For accurate map, use actual India SVG path data */}
+        <path d="M 400,20 480,25 540,35 580,50 600,70 590,90 560,85 520,75 470,65 420,55 390,45 370,35 360,25 Z" />
+        <path d="M 400,85 520,95 570,115 560,145 540,165 500,160 460,150 420,140 390,130 Z" />
+        <path d="M 140,95 420,105 480,125 500,175 490,225 470,275 440,295 390,285 320,265 260,235 220,205 200,165 190,125 170,105 Z" />
+        <path d="M 90,175 240,185 270,215 260,255 240,285 210,275 180,255 160,225 140,205 110,195 Z" />
+        <path d="M 420,175 570,185 610,225 600,295 580,355 550,395 510,405 450,395 410,365 390,325 380,275 390,225 Z" />
+        <path d="M 470,125 620,135 660,175 650,255 630,335 600,375 560,385 500,375 470,335 450,275 440,215 450,165 Z" />
+        <path d="M 570,325 670,335 710,375 700,435 680,475 650,485 600,475 570,435 560,385 Z" />
+        <path d="M 620,375 720,385 760,435 750,495 730,535 700,545 650,535 620,495 610,445 Z" />
+        <path d="M 570,475 670,485 710,535 700,595 680,635 650,645 610,635 590,595 580,545 Z" />
+        <path d="M 520,425 620,435 660,475 650,525 630,555 600,565 570,555 550,525 540,485 Z" />
+        <path d="M 570,395 670,405 710,445 700,495 680,525 650,535 620,525 600,495 590,455 Z" />
+        <path d="M 240,275 490,285 540,325 530,405 510,485 480,525 430,515 380,485 340,435 320,375 330,325 Z" />
+        <path d="M 520,525 620,535 660,585 650,665 630,705 600,715 570,705 550,665 540,615 Z" />
+        <path d="M 470,475 570,485 610,525 600,575 580,605 550,615 520,605 500,575 490,535 Z" />
+        <path d="M 350,525 520,535 560,575 550,655 530,695 500,705 460,695 430,655 410,605 400,555 Z" />
+        <path d="M 470,625 570,635 610,685 600,775 580,815 550,825 520,815 500,775 490,725 Z" />
+        <path d="M 300,675 470,685 510,725 500,785 480,825 450,835 420,825 400,785 390,735 Z" />
+        <path d="M 320,575 360,585 380,605 370,625 350,635 330,625 320,605 Z" />
+        <path d="M 670,375 710,380 720,395 710,410 690,415 670,410 660,395 Z" />
+        <path d="M 720,325 820,335 860,375 850,435 830,475 800,485 770,475 750,435 740,385 Z" />
+        <path d="M 770,225 870,235 910,275 900,335 880,375 850,385 820,375 800,335 790,285 Z" />
+        <path d="M 790,395 830,405 860,435 850,475 830,505 800,515 770,505 750,475 740,445 750,415 Z" />
+        <path d="M 750,375 800,385 830,415 820,455 800,485 770,495 740,485 720,455 710,425 720,395 Z" />
+        <path d="M 770,455 820,465 860,505 850,545 830,575 800,585 770,575 750,545 740,505 750,475 Z" />
+        <path d="M 800,355 850,365 880,405 870,445 850,475 820,485 790,475 770,445 760,405 770,375 Z" />
+        <path d="M 790,425 830,435 860,465 850,505 830,535 800,545 770,535 750,505 740,475 750,445 Z" />
+        <path d="M 740,295 780,305 810,335 800,375 780,405 750,415 720,405 700,375 690,345 700,315 Z" />
+        <path d="M 920,575 970,585 990,615 980,645 960,665 930,675 900,665 880,645 870,615 880,585 Z" />
+        <path d="M 940,725 970,735 990,755 980,785 960,805 930,815 900,805 880,785 870,755 880,735 Z" />
+        <path d="M 950,825 980,835 1000,855 990,885 970,905 940,915 910,905 890,885 880,855 890,835 Z" />
+      </g>
+    </svg>
+  )
+}
+
+const AvailablePanIndia = () => {
+  return (
+    <section className="w-full bg-white py-12 sm:py-16 md:py-20 lg:py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        {/* Section Title */}
+        <div className="text-center mb-10 sm:mb-12 md:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#0A0F4A] mb-3 sm:mb-4">
+            Available PAN India
+          </h2>
+          <p className="max-w-3xl mx-auto text-sm sm:text-base md:text-lg text-[#6B7280]">
+            Dulari is expanding rapidly across India, bringing quality healthcare to your doorstep, no matter where you are.
+          </p>
+        </div>
+
+        {/* Two-column layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 items-center">
+          {/* Left Side - Map */}
+          <div className="order-1 lg:order-1">
+            <div className="bg-white p-4 sm:p-6 md:p-8 rounded-lg flex items-center justify-center">
+              <div className="w-full max-w-md">
+                <IndiaMap />
+              </div>
+            </div>
+          </div>
+
+          {/* Right Side - Content */}
+          <div className="order-2 lg:order-2">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#0A0F4A] mb-4 sm:mb-5">
+              Expanding Our Reach Across India
+            </h3>
+            <p className="text-sm sm:text-base md:text-lg text-[#6B7280] mb-8 sm:mb-10 leading-relaxed">
+              From metro cities to tier-2 and tier-3 cities, Dulari is committed to making healthcare accessible to everyone across India.
+            </p>
+
+            {/* Statistics Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
+              {statistics.map((stat) => (
+                <div
+                  key={stat.id}
+                  className="bg-white rounded-lg p-4 sm:p-5 md:p-6 shadow-md border border-[#E5E7EB] hover:shadow-lg transition-shadow"
+                >
+                  <div className="flex flex-col items-center text-center">
+                    {/* Icon */}
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-lg bg-[#0A0F4A] flex items-center justify-center mb-3 sm:mb-4">
+                      {stat.icon}
+                    </div>
+                    {/* Number */}
+                    <div className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#0A0F4A] mb-1 sm:mb-2">
+                      {stat.number}
+                    </div>
+                    {/* Label */}
+                    <div className="text-xs sm:text-sm md:text-base text-[#6B7280] font-medium">
+                      {stat.label}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export default AvailablePanIndia

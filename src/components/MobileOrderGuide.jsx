@@ -9,32 +9,32 @@ const MobileOrderGuide = () => {
       title: 'Open WhatsApp',
       description: 'Click on the WhatsApp button',
       icon: FaWhatsapp,
-      color: 'from-green-400 to-green-600',
+      color: 'from-teal-500 to-teal-600',
     },
     {
       title: 'Send Prescription',
       description: 'Share your prescription or medicine list',
       icon: FaWhatsapp,
-      color: 'from-green-400 to-green-600',
+      color: 'from-teal-500 to-teal-600',
     },
     {
       title: 'Get Confirmation',
       description: 'Our team confirms your order',
       icon: FaHandshake,
-      color: 'from-blue-400 to-blue-600',
+      color: 'from-blue-500 to-blue-600',
     },
     {
       title: 'Fast Delivery',
       description: 'Receive medicines at your doorstep',
       icon: FaShieldAlt,
-      color: 'from-green-400 to-green-600',
+      color: 'from-teal-500 to-teal-600',
     },
   ]
 
   const taglines = [
-    { icon: FaHeart, text: 'Dawa Bhi • Dua Bhi', subtext: 'Medicines with care and compassion', color: 'text-red-500' },
-    { icon: FaHandshake, text: 'Bharosa Har Dawa Mein', subtext: 'Trust in every medicine we deliver', color: 'text-blue-500' },
-    { icon: FaShieldAlt, text: 'Trusted Medicines with Care', subtext: 'Professional healthcare services', color: 'text-green-500' },
+    { icon: FaHeart, text: 'Dawa Bhi • Dua Bhi', subtext: 'Medicines with care and compassion', color: 'text-blue-600' },
+    { icon: FaHandshake, text: 'Bharosa Har Dawa Mein', subtext: 'Trust in every medicine we deliver', color: 'text-teal-600' },
+    { icon: FaShieldAlt, text: 'Trusted Medicines with Care', subtext: 'Professional healthcare services', color: 'text-cyan-600' },
   ]
 
   useEffect(() => {
@@ -121,7 +121,7 @@ const MobileOrderGuide = () => {
           href="https://wa.me/919876543210?text=Hello%2C%20I%20would%20like%20to%20order%20medicines%20from%20Dulari%20Healthcare."
           target="_blank"
           rel="noopener noreferrer"
-          className="block w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-4 px-6 rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 text-center flex items-center justify-center gap-3"
+          className="block w-full bg-gradient-to-r from-teal-600 to-blue-600 hover:from-teal-700 hover:to-blue-700 text-white font-bold py-4 px-6 rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 text-center flex items-center justify-center gap-3"
         >
           <FaWhatsapp className="text-3xl animate-bounce" />
           <span className="text-lg">Order Now on WhatsApp</span>

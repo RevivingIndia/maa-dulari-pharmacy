@@ -11,7 +11,7 @@ const CustomerReviews = () => {
       english: 'Excellent service! Got my medicines delivered within 2 hours. The staff is very helpful and professional.',
       hindi: 'बहुत बढ़िया सेवा! मुझे 2 घंटे के अंदर दवाएं मिल गईं। स्टाफ बहुत मददगार और पेशेवर है।',
       image: '👨‍💼',
-      color: 'from-blue-500 to-cyan-500',
+      color: 'from-blue-600 to-teal-600',
     },
     {
       id: 2,
@@ -21,7 +21,7 @@ const CustomerReviews = () => {
       english: 'Trustworthy pharmacy with authentic medicines. Fast delivery and great customer support. Highly recommended!',
       hindi: 'विश्वसनीय फार्मेसी जिसमें असली दवाएं मिलती हैं। तेज़ डिलीवरी और बेहतरीन ग्राहक सहायता। अत्यधिक अनुशंसित!',
       image: '👩‍💼',
-      color: 'from-pink-500 to-rose-500',
+      color: 'from-teal-600 to-cyan-600',
     },
     {
       id: 3,
@@ -31,7 +31,7 @@ const CustomerReviews = () => {
       english: 'Best pharmacy in town! They have all medicines available and deliver on time. Very satisfied with their service.',
       hindi: 'शहर की सबसे अच्छी फार्मेसी! उनके पास सभी दवाएं उपलब्ध हैं और समय पर डिलीवरी करते हैं। उनकी सेवा से बहुत संतुष्ट हूं।',
       image: '👨‍🔬',
-      color: 'from-green-500 to-emerald-500',
+      color: 'from-cyan-600 to-teal-600',
     },
     {
       id: 4,
@@ -41,7 +41,7 @@ const CustomerReviews = () => {
       english: 'Very caring staff. They helped me understand my prescription and suggested the best medicines. Thank you!',
       hindi: 'बहुत देखभाल करने वाला स्टाफ। उन्होंने मुझे मेरी दवा समझने में मदद की और सबसे अच्छी दवाएं सुझाईं। धन्यवाद!',
       image: '👩‍⚕️',
-      color: 'from-purple-500 to-indigo-500',
+      color: 'from-blue-600 to-teal-600',
     },
     {
       id: 5,
@@ -51,7 +51,7 @@ const CustomerReviews = () => {
       english: 'Quick delivery and genuine products. The WhatsApp ordering system is very convenient. Great experience!',
       hindi: 'तेज़ डिलीवरी और असली उत्पाद। व्हाट्सएप ऑर्डरिंग सिस्टम बहुत सुविधाजनक है। बेहतरीन अनुभव!',
       image: '👨‍💻',
-      color: 'from-orange-500 to-amber-500',
+      color: 'from-teal-600 to-cyan-600',
     },
     {
       id: 6,
@@ -61,7 +61,7 @@ const CustomerReviews = () => {
       english: 'Professional service with authentic medicines. They care about their customers. Will definitely order again!',
       hindi: 'असली दवाओं के साथ पेशेवर सेवा। वे अपने ग्राहकों की परवाह करते हैं। निश्चित रूप से फिर से ऑर्डर करूंगी!',
       image: '👩‍🏫',
-      color: 'from-teal-500 to-cyan-500',
+      color: 'from-cyan-600 to-blue-600',
     },
   ]
 
@@ -130,7 +130,7 @@ const CustomerReviews = () => {
 
         {/* Additional Info */}
         <div className="mt-12 text-center">
-          <div className="inline-flex items-center gap-4 px-8 py-4 bg-gradient-to-r from-blue-50 via-green-50 to-pink-50 rounded-full border-2 border-gray-200">
+          <div className="inline-flex items-center gap-4 px-8 py-4 bg-gradient-to-r from-blue-50 via-teal-50 to-cyan-50 rounded-full border-2 border-gray-200">
             <div className="flex items-center gap-2">
               <FaStar className="text-yellow-400 text-2xl" />
               <span className="text-2xl font-bold text-gray-800">4.9</span>
