@@ -2,6 +2,7 @@ import React from 'react'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import Taglines from './components/Taglines'
+import SearchOrderHero from './components/SearchOrderHero'
 import OurPromiseToYou from './components/OurPromiseToYou'
 import TrustedByFamilies from './components/TrustedByFamilies'
 import WhatsAppOrder from './components/WhatsAppOrder'
@@ -21,6 +22,7 @@ function App() {
       <WhatsAppOrder />
       <WhyChooseUs />
       <CustomerReviews />
+      <SearchOrderHero />
       <MobileOrderGuide />
       <Footer />
     </div>

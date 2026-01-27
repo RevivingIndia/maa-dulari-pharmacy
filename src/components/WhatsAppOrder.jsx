@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo, useRef } from 'react'
 import { FaWhatsapp, FaPhone, FaEnvelope, FaHandshake } from 'react-icons/fa'
 
 const WhatsAppOrder = () => {
-  const [phoneNumber] = useState('919876543210')
+  const [phoneNumber] = useState('919798133879')
   const [message, setMessage] = useState('')
   const [currentStep, setCurrentStep] = useState(0)
   const [showMessages, setShowMessages] = useState([])
@@ -183,7 +183,7 @@ const WhatsAppOrder = () => {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-gray-800">How to Order</h3>
-                  <p className="text-gray-600">Simple 3-step process</p>
+                  <p className="text-gray-600">Get your medicines in just 3 easy steps</p>
                 </div>
               </div>
 
@@ -193,9 +193,9 @@ const WhatsAppOrder = () => {
                     <span className="text-green-600 font-bold">1</span>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-800">Send Prescription</h4>
+                    <h4 className="font-semibold text-gray-800">Send Your Prescription</h4>
                     <p className="text-gray-600 text-sm">
-                      Share your prescription or medicine list via WhatsApp
+                      Share your prescription or medicine list via WhatsApp at 9798133879.
                     </p>
                   </div>
                 </div>
@@ -204,9 +204,9 @@ const WhatsAppOrder = () => {
                     <span className="text-green-600 font-bold">2</span>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-800">Get Confirmation</h4>
+                    <h4 className="font-semibold text-gray-800">Confirm Your Order</h4>
                     <p className="text-gray-600 text-sm">
-                      Our team will confirm your order and provide pricing
+                      Provide your delivery address and confirm the order details.
                     </p>
                   </div>
                 </div>
@@ -215,9 +215,9 @@ const WhatsAppOrder = () => {
                     <span className="text-green-600 font-bold">3</span>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-800">Fast Delivery</h4>
+                    <h4 className="font-semibold text-gray-800">Receive Your Medicines</h4>
                     <p className="text-gray-600 text-sm">
-                      Get your medicines delivered to your doorstep
+                      Get your order delivered to your doorstep, anywhere in India.
                     </p>
                   </div>
                 </div>
@@ -252,7 +252,7 @@ const WhatsAppOrder = () => {
               <FaPhone className="text-blue-500 text-2xl" />
               <div>
                 <div className="font-semibold text-gray-800">Call Us</div>
-                <div className="text-sm text-gray-600">+91 98765 43210</div>
+                <div className="text-sm text-gray-600">+91 97981 33879</div>
               </div>
             </a>
             <a
