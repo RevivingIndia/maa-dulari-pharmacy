@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pan India Availability</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #ffffff; color: #1e1e2f; }
+        .section { padding: 80px 20px; }
+        .container { max-width: 1200px; margin: auto; }
+        .badge {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 999px;
+            background: #eef2ff;
+            color: #1b1454;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+        .header { text-align: center; margin-bottom: 60px; }
+        .header h2 { font-size: 36px; font-weight: 700; color: #1b1454; margin-bottom: 12px; }
+        .header p { max-width: 650px; margin: auto; color: #6b7280; font-size: 16px; line-height: 1.6; }
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .map img { width: 100%; max-width: 420px; display: block; margin: auto; }
+        .right h3 { font-size: 28px; font-weight: 700; color: #1b1454; margin-bottom: 12px; }
+        .right p { color: #6b7280; font-size: 15px; line-height: 1.6; margin-bottom: 30px; }
+        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+        .stat-card {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 20px;
+            display: flex;
+            gap: 14px;
+            align-items: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+        }
+        .icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            background: #1b1454;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+        .stat-text h4 { font-size: 20px; font-weight: 700; color: #1b1454; }
+        .stat-text span { font-size: 14px; color: #6b7280; }
+        @media (max-width: 900px) {
+            .content { grid-template-columns: 1fr; text-align: center; }
+            .right { text-align: center; }
+        }
+        @media (max-width: 600px) { .header h2 { font-size: 28px; } }
+    </style>
+</head>
+<body>
+<section class="section">
+    <div class="container">
+        <div class="header">
+            <span class="badge">🌐 Nationwide Service</span>
+            <h2>Available PAN India</h2>
+            <p>Dulari is expanding rapidly across India, bringing quality healthcare to your doorstep, no matter where you are.</p>
+        </div>
+        <div class="content">
+            <div class="map">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/India_outline_map.svg" alt="India Map">
+            </div>
+            <div class="right">
+                <h3>Expanding Our Reach Across India</h3>
+                <p>From metro cities to tier-2 and tier-3 cities, Dulari is committed to making healthcare accessible to everyone across India.</p>
+                <div class="stats">
+                    <div class="stat-card">
+                        <div class="icon">📍</div>
+                        <div class="stat-text"><h4>100+</h4><span>Cities Covered</span></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="icon">🏪</div>
+                        <div class="stat-text"><h4>170+</h4><span>Partner Pharmacies</span></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="icon">🚚</div>
+                        <div class="stat-text"><h4>25k+</h4><span>Orders Delivered</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

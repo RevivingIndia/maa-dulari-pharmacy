@@ -1,80 +1,89 @@
 import React from 'react'
-import { FaShieldAlt, FaTruck, FaClock, FaUserMd, FaAward, FaHeadset } from 'react-icons/fa'
+import { FaWhatsapp, FaCheckCircle, FaTruck } from 'react-icons/fa'
+
+const steps = [
+  {
+    number: 1,
+    icon: FaWhatsapp,
+    iconBg: 'bg-[#e7f9ef]',
+    iconColor: 'text-[#22c55e]',
+    title: 'Send Your Prescription',
+    description: 'Share your prescription or medicine list via WhatsApp.',
+  },
+  {
+    number: 2,
+    icon: FaCheckCircle,
+    iconBg: 'bg-[#eef0f5]',
+    iconColor: 'text-[#1b1642]',
+    title: 'Confirm Your Order',
+    description: 'Provide your delivery address and confirm the order details.',
+  },
+  {
+    number: 3,
+    icon: FaTruck,
+    iconBg: 'bg-[#fff1e8]',
+    iconColor: 'text-[#fb923c]',
+    title: 'Receive Your Medicines',
+    description: 'Get your order delivered to your doorstep, anywhere in India.',
+  },
+]
 
 const WhyChooseUs = () => {
-  const features = [
-    {
-      icon: FaShieldAlt,
-      title: '100% Authentic Products',
-      description: 'All medicines are verified and authentic, sourced directly from licensed manufacturers',
-      color: 'from-blue-600 to-teal-600',
-    },
-    {
-      icon: FaTruck,
-      title: 'Fast & Free Delivery',
-      description: 'Quick delivery across 1200+ cities. Free delivery on orders above ₹500',
-      color: 'from-teal-600 to-green-600',
-    },
-    {
-      icon: FaClock,
-      title: '24/7 Availability',
-      description: 'Order anytime, anywhere. Our services are available round the clock',
-      color: 'from-blue-600 to-cyan-600',
-    },
-    {
-      icon: FaUserMd,
-      title: 'Expert Consultation',
-      description: 'Free consultation with qualified pharmacists and healthcare experts',
-      color: 'from-teal-600 to-blue-600',
-    },
-    {
-      icon: FaAward,
-      title: 'Trusted by Millions',
-      description: 'Serving millions of customers with care and compassion since years',
-      color: 'from-cyan-600 to-teal-600',
-    },
-    {
-      icon: FaHeadset,
-      title: '24/7 Customer Support',
-      description: 'Dedicated customer support team ready to help you anytime',
-      color: 'from-blue-600 to-teal-600',
-    },
-  ]
-
   return (
-    <section className="w-full bg-gradient-to-b from-[#0A0F4A] to-[#050833] py-12 sm:py-16 md:py-20 lg:py-24">
-      <div className="container mx-auto px-4 sm:px-6">
-        <div className="text-center mb-10 sm:mb-12 md:mb-14">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4">
-            Why Choose Us?
-          </h2>
-          <p className="text-[#B8C1EC] text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
-            We are committed to providing the best healthcare services with trust, care, and professionalism
-          </p>
-        </div>
+    <section
+      className="py-16 sm:py-20 md:py-[90px] px-4 sm:px-6 bg-[#fafaff] text-center"
+      style={{ fontFamily: "'Inter', sans-serif" }}
+    >
+      <div className="max-w-[1200px] mx-auto">
+        {/* Badge */}
+        <span className="inline-block bg-[#1b1642] text-white py-2 px-[18px] rounded-[20px] text-[13px] font-semibold mb-4">
+          SIMPLE PROCESS
+        </span>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {features.map((feature, index) => {
-            const IconComponent = feature.icon
+        <h2 className="text-2xl sm:text-3xl md:text-[36px] font-bold text-[#1b1642] mb-2.5">
+          How to Order
+        </h2>
+        <p className="text-base text-[#6b7280] mb-12 sm:mb-14 md:mb-[60px]">
+          Get your medicines in just 3 easy steps
+        </p>
+
+        {/* Step cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-[30px] relative">
+          {steps.map((step, index) => {
+            const IconComponent = step.icon
             return (
-              <div
-                key={index}
-                className="bg-[#070B3F]/80 rounded-2xl p-6 sm:p-7 md:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-[rgba(255,255,255,0.15)] group"
-                style={{
-                  animation: `fade-in-up 0.6s ease-out forwards`,
-                  animationDelay: `${index * 0.1}s`,
-                  opacity: 0,
-                }}
-              >
-                <div className={`w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br ${feature.color} flex items-center justify-center text-white text-3xl mb-5 sm:mb-6 group-hover:scale-110 transition-transform shadow-lg`}>
-                  <IconComponent />
+              <div key={step.number} className="relative">
+                <div className="bg-white p-8 sm:p-10 md:py-10 md:px-6 rounded-[20px] relative shadow-[0_20px_40px_rgba(0,0,0,0.08)] h-full">
+                  {/* Step number badge - top right */}
+                  <span className="absolute -top-3.5 -right-3.5 w-8 h-8 rounded-full bg-[#1b1642] text-white text-sm font-semibold flex items-center justify-center">
+                    {step.number}
+                  </span>
+
+                  {/* Icon */}
+                  <div
+                    className={`w-16 h-16 mx-auto mb-5 rounded-2xl flex items-center justify-center ${step.iconBg} ${step.iconColor}`}
+                  >
+                    <IconComponent className="text-2xl" />
+                  </div>
+
+                  <h3 className="text-lg font-semibold text-[#1b1642] mb-2.5">
+                    {step.title}
+                  </h3>
+                  <p className="text-[15px] text-[#6b7280] leading-relaxed">
+                    {step.description}
+                  </p>
+
+                  {/* Arrow - desktop only, hidden on last card */}
+                  {index < steps.length - 1 && (
+                    <span
+                      className="absolute hidden md:block top-1/2 -translate-y-1/2 text-[#1b1642] text-2xl font-bold"
+                      style={{ right: '-22px' }}
+                      aria-hidden
+                    >
+                      →
+                    </span>
+                  )}
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold text-white mb-2 sm:mb-3 group-hover:text-white transition-colors">
-                  {feature.title}
-                </h3>
-                <p className="text-sm sm:text-base text-[#B8C1EC] leading-relaxed">
-                  {feature.description}
-                </p>
               </div>
             )
           })}

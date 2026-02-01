@@ -21,8 +21,8 @@ const Header = () => {
           <div className="flex items-center space-x-2">
             <MdLocalPharmacy className="text-2xl md:text-4xl text-blue-600" />
             <div>
-              <h1 className="text-lg md:text-2xl font-bold text-gradient">Dulari Healthcare</h1>
-              <p className="text-xs text-gray-600 hidden sm:block">Your Trusted Pharmacy</p>
+              <h1 className="text-lg md:text-2xl font-bold text-gradient">Dulari</h1>
+              <p className="text-xs text-gray-600 hidden sm:block">dawa bhi dua bhi</p>
             </div>
           </div>
 

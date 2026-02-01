@@ -1,31 +1,18 @@
 import React from 'react'
-import Header from './components/Header'
-import Hero from './components/Hero'
-import Taglines from './components/Taglines'
-import SearchOrderHero from './components/SearchOrderHero'
-import OurPromiseToYou from './components/OurPromiseToYou'
-import TrustedByFamilies from './components/TrustedByFamilies'
-import WhatsAppOrder from './components/WhatsAppOrder'
-import WhyChooseUs from './components/WhyChooseUs'
-import CustomerReviews from './components/CustomerReviews'
-import MobileOrderGuide from './components/MobileOrderGuide'
-import Footer from './components/Footer'
+import { Routes, Route } from 'react-router-dom'
+import ScrollToTop from './components/ScrollToTop'
+import HomePage from './pages/HomePage'
+import BlogPostPage from './pages/BlogPostPage'
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-50">
-      <Header />
-      <Hero />
-      <Taglines />
-      <OurPromiseToYou />
-      <TrustedByFamilies />
-      <WhatsAppOrder />
-      <WhyChooseUs />
-      <CustomerReviews />
-      <SearchOrderHero />
-      <MobileOrderGuide />
-      <Footer />
-    </div>
+    <>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/blog/:id" element={<BlogPostPage />} />
+      </Routes>
+    </>
   )
 }
 

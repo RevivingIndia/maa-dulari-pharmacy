@@ -52,6 +52,37 @@
   }
 }
 
+/* Hero device animations – phone / tablet / web */
+@keyframes device-in {
+  0% {
+    opacity: 0;
+    transform: translateX(24px) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes bubble-in {
+  0% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-device-in {
+  animation: device-in 0.5s ease-out forwards;
+}
+
+.animate-bubble-in {
+  animation: bubble-in 0.4s ease-out forwards;
+}
+
 /* Hide scrollbar */
 .scrollbar-hide {
   -ms-overflow-style: none;

@@ -1,0 +1,160 @@
+.partner-franchise-section {
+  font-family: 'Inter', -apple-system, sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #1b0f6b 0%, #0b0538 50%, #050833 100%);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px 60px;
+}
+
+.partner-franchise-section .hero {
+  text-align: center;
+  margin-bottom: 40px;
+  max-width: 640px;
+}
+
+.partner-franchise-section .badge {
+  display: inline-block;
+  background: #fff;
+  color: #1b1642;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.partner-franchise-section .hero h1 {
+  font-size: clamp(28px, 5vw, 48px);
+  font-weight: 700;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.partner-franchise-section .hero .subtitle {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.partner-franchise-section .card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+  padding: 40px 32px;
+  width: 100%;
+  max-width: 560px;
+}
+
+.partner-franchise-section .card h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1b1642;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.partner-franchise-section .card-subtitle {
+  font-size: 14px;
+  color: #6b7280;
+  text-align: center;
+  margin-bottom: 28px;
+  line-height: 1.5;
+}
+
+.partner-franchise-section .form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.partner-franchise-section .form-group {
+  margin-bottom: 0;
+}
+
+.partner-franchise-section .form-group.full {
+  grid-column: 1 / -1;
+}
+
+.partner-franchise-section label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1b1642;
+  margin-bottom: 8px;
+}
+
+.partner-franchise-section input,
+.partner-franchise-section textarea {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 15px;
+  font-family: inherit;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  color: #1b1642;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.partner-franchise-section input::placeholder,
+.partner-franchise-section textarea::placeholder {
+  color: #94a3b8;
+}
+
+.partner-franchise-section input:focus,
+.partner-franchise-section textarea:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.partner-franchise-section textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.partner-franchise-section .submit-btn {
+  width: 100%;
+  margin-top: 24px;
+  padding: 14px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: inherit;
+  color: #fff;
+  background: linear-gradient(135deg, #6366f1 0%, #1b1642 100%);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: transform 0.2s, filter 0.2s;
+}
+
+.partner-franchise-section .submit-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+
+.partner-franchise-section .submit-btn:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 600px) {
+  .partner-franchise-section .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .partner-franchise-section .card {
+    padding: 28px 20px;
+  }
+
+  .partner-franchise-section {
+    padding: 24px 16px 48px;
+  }
+}

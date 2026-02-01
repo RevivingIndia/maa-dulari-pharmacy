@@ -1,0 +1,31 @@
+.blog-post-page {
+  font-family: 'Inter', sans-serif;
+}
+
+.blog-post-content h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1b1454;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.blog-post-content p {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+.blog-post-content p:first-of-type {
+  margin-top: 0;
+}
+
+.blog-post-content strong {
+  font-weight: 600;
+  color: #1b1454;
+}
+
+.blog-post-content br {
+  display: block;
+  content: '';
+  margin-top: 0.5rem;
+}
