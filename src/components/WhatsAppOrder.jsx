@@ -75,24 +75,24 @@ const WhatsAppOrder = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 items-start">
-            {/* Mobile WhatsApp Animation */}
-            <div className="order-2 md:order-1">
-              <div className="bg-gray-900 rounded-[2rem] sm:rounded-[3rem] p-2 sm:p-4 shadow-2xl max-w-xs sm:max-w-sm mx-auto">
+          <div className="grid md:grid-cols-2 gap-6 sm:gap-8 items-start">
+            {/* Mobile WhatsApp Animation – responsive on small screens */}
+            <div className="order-2 md:order-1 w-full overflow-hidden">
+              <div className="bg-gray-900 rounded-[1.5rem] sm:rounded-[2rem] md:rounded-[3rem] p-1.5 sm:p-2 md:p-4 shadow-2xl max-w-[260px] sm:max-w-[320px] md:max-w-sm mx-auto w-full">
                 {/* Phone Frame */}
-                <div className="bg-white rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden">
+                <div className="bg-white rounded-[1.25rem] sm:rounded-[2rem] md:rounded-[2.5rem] overflow-hidden">
                   {/* Status Bar */}
-                  <div className="bg-green-600 text-white px-4 py-2 flex items-center justify-between text-xs">
-                    <div className="flex items-center gap-2">
-                      <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center">
-                        <FaWhatsapp className="text-green-600 text-sm" />
+                  <div className="bg-green-600 text-white px-2.5 sm:px-3 md:px-4 py-1.5 sm:py-2 flex items-center justify-between text-[10px] sm:text-xs">
+                    <div className="flex items-center gap-1.5 sm:gap-2 min-w-0">
+                      <div className="w-5 h-5 sm:w-6 sm:h-6 bg-white rounded-full flex items-center justify-center flex-shrink-0">
+                        <FaWhatsapp className="text-green-600 text-xs sm:text-sm" />
                       </div>
-                      <div>
-                        <div className="font-semibold">Maa Dulari Pharmacy</div>
-                        <div className="text-xs opacity-90">online</div>
+                      <div className="min-w-0">
+                        <div className="font-semibold truncate">Maa Dulari Pharmacy</div>
+                        <div className="text-[10px] sm:text-xs opacity-90 truncate">online</div>
                       </div>
                     </div>
-                    <div className="flex items-center gap-1">
+                    <div className="flex items-center gap-0.5 flex-shrink-0">
                       <div className="w-1 h-1 bg-white rounded-full"></div>
                       <div className="w-1 h-1 bg-white rounded-full"></div>
                       <div className="w-1 h-1 bg-white rounded-full"></div>
@@ -102,17 +102,17 @@ const WhatsAppOrder = () => {
                   {/* Chat Messages */}
                   <div 
                     ref={chatContainerRef}
-                    className="bg-gray-100 h-[350px] sm:h-[400px] md:h-[500px] p-3 sm:p-4 overflow-y-auto flex flex-col gap-2 sm:gap-3 scroll-smooth"
+                    className="bg-gray-100 h-[260px] sm:h-[320px] md:h-[400px] lg:h-[500px] p-2 sm:p-3 md:p-4 overflow-y-auto overflow-x-hidden flex flex-col gap-1.5 sm:gap-2 md:gap-3 scroll-smooth"
                   >
                     {/* Welcome Message */}
-                    <div className="bg-green-100 rounded-lg p-3 self-start max-w-[80%]">
-                      <div className="text-sm text-gray-800">
-                        <strong>Maa Dulari Pharmacy</strong>
+                    <div className="bg-green-100 rounded-lg p-2 sm:p-3 self-start max-w-[85%] sm:max-w-[80%]">
+                      <div className="text-xs sm:text-sm text-gray-800 font-semibold">
+                        Maa Dulari Pharmacy
                       </div>
-                      <div className="text-sm text-gray-700 mt-1">
+                      <div className="text-xs sm:text-sm text-gray-700 mt-0.5 sm:mt-1">
                         Namaste! Welcome to Maa Dulari Pharmacy 👋
                       </div>
-                      <div className="text-xs text-gray-500 mt-2">
+                      <div className="text-[10px] sm:text-xs text-gray-500 mt-1 sm:mt-2">
                         Bharosa Har Dawa Mein
                       </div>
                     </div>
@@ -121,16 +121,13 @@ const WhatsAppOrder = () => {
                     {showMessages.map((msg, index) => (
                       <div
                         key={index}
-                        className={`rounded-lg p-3 max-w-[80%] ${
+                        className={`rounded-lg p-2 sm:p-3 max-w-[85%] sm:max-w-[80%] animate-fade-in-up ${
                           msg.sender === 'user'
                             ? 'bg-green-500 text-white self-end ml-auto'
                             : 'bg-white text-gray-800 self-start shadow-sm'
                         }`}
-                        style={{
-                          animation: 'fade-in-up 0.5s ease-out',
-                        }}
                       >
-                        <div className="text-sm whitespace-pre-wrap">{msg.text}</div>
+                        <div className="text-xs sm:text-sm whitespace-pre-wrap break-words">{msg.text}</div>
                         <div
                           className={`text-xs mt-1 ${
                             msg.sender === 'user' ? 'text-green-100' : 'text-gray-400'
@@ -146,8 +143,8 @@ const WhatsAppOrder = () => {
 
                     {/* Typing Indicator */}
                     {currentStep < conversationSteps.length && (
-                      <div className="bg-white rounded-lg p-3 self-start shadow-sm">
-                        <div className="flex gap-1">
+                      <div className="bg-white rounded-lg p-2 sm:p-3 self-start shadow-sm">
+                        <div className="flex gap-0.5 sm:gap-1">
                           <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
                           <div
                             className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
@@ -163,12 +160,12 @@ const WhatsAppOrder = () => {
                   </div>
 
                   {/* Input Area */}
-                  <div className="bg-white border-t border-gray-200 p-3 flex items-center gap-2">
-                    <div className="flex-1 bg-gray-100 rounded-full px-4 py-2 text-sm text-gray-500">
+                  <div className="bg-white border-t border-gray-200 p-2 sm:p-3 flex items-center gap-1.5 sm:gap-2">
+                    <div className="flex-1 min-w-0 bg-gray-100 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm text-gray-500 truncate">
                       Type a message...
                     </div>
-                    <button className="bg-green-500 text-white rounded-full p-2">
-                      <FaWhatsapp className="text-xl" />
+                    <button className="bg-green-500 text-white rounded-full p-1.5 sm:p-2 flex-shrink-0">
+                      <FaWhatsapp className="text-lg sm:text-xl" />
                     </button>
                   </div>
                 </div>
@@ -176,7 +173,7 @@ const WhatsAppOrder = () => {
             </div>
 
             {/* Order Steps Card */}
-            <div className="order-1 md:order-2 bg-white rounded-2xl shadow-xl p-8">
+            <div className="order-1 md:order-2 bg-white rounded-2xl shadow-xl p-4 sm:p-6 md:p-8">
               <div className="flex items-center space-x-4 mb-6">
                 <div className="bg-green-500 rounded-full p-3">
                   <FaWhatsapp className="text-3xl text-white" />

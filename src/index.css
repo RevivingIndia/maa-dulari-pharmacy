@@ -83,6 +83,10 @@
   animation: bubble-in 0.4s ease-out forwards;
 }
 
+.animate-fade-in-up {
+  animation: fade-in-up 0.5s ease-out forwards;
+}
+
 /* Hide scrollbar */
 .scrollbar-hide {
   -ms-overflow-style: none;
@@ -168,4 +172,34 @@
 .medical-bg-overlay > * {
   position: relative;
   z-index: 1;
+}
+
+/* Hero Swiper – full height and mobile responsive */
+.hero-swiper,
+.hero-swiper .swiper-wrapper,
+.hero-swiper .swiper-slide {
+  height: 100% !important;
+}
+
+.hero-swiper .swiper-slide > div {
+  height: 100%;
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .hero-swiper .swiper-button-next,
+  .hero-swiper .swiper-button-prev {
+    display: none !important;
+  }
+  .hero-swiper .swiper-pagination {
+    bottom: 10px !important;
+  }
+  .hero-swiper .swiper-pagination-bullet {
+    width: 6px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.8);
+  }
+  .hero-swiper .swiper-pagination-bullet-active {
+    transform: scale(1.3);
+  }
 }
