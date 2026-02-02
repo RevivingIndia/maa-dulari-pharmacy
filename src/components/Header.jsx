@@ -1,16 +1,26 @@
 import React, { useState } from 'react'
-import { FaSearch, FaBars, FaTimes, FaPhone, FaWhatsapp } from 'react-icons/fa'
+import { Link, useLocation } from 'react-router-dom'
+import { FaBars, FaTimes, FaPhone, FaWhatsapp } from 'react-icons/fa'
 import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa'
 import { MdLocalPharmacy } from 'react-icons/md'
 
+const navLinks = [
+  { label: 'Home', path: '/' },
+  { label: 'About Us', path: '/about' },
+  { label: 'Services', path: '/services' },
+  { label: 'FAQs', path: '/faqs' },
+  { label: 'Blog', path: '/blog' },
+  { label: 'Contact Us', path: '/contact' },
+  { label: 'Order Now', href: 'https://api.whatsapp.com/send/?phone=919798133879&text&type=phone_number&app_absent=0', external: true },
+]
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [searchQuery, setSearchQuery] = useState('')
+  const location = useLocation()
 
-  const handleSearch = (e) => {
-    e.preventDefault()
-    // Handle search functionality
-    console.log('Searching for:', searchQuery)
+  const isActive = (path) => {
+    if (path === '/') return location.pathname === '/'
+    return location.pathname.startsWith(path)
   }
 
   return (
@@ -18,33 +28,46 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center space-x-2">
             <MdLocalPharmacy className="text-2xl md:text-4xl text-blue-600" />
             <div>
               <h1 className="text-lg md:text-2xl font-bold text-gradient">Dulari</h1>
               <p className="text-xs text-gray-600 hidden sm:block">dawa bhi dua bhi</p>
             </div>
-          </div>
+          </Link>
 
-          {/* Search Bar - Desktop */}
-          <form onSubmit={handleSearch} className="hidden md:flex flex-1 max-w-2xl mx-8">
-            <div className="relative w-full">
-              <input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search for medicines, health products..."
-                className="w-full px-4 py-3 pl-12 pr-32 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
-              />
-              <FaSearch className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
-              <button
-                type="submit"
-                className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-colors"
-              >
-                Search
-              </button>
-            </div>
-          </form>
+          {/* Desktop Nav Menu */}
+          <nav className="hidden md:flex flex-1 justify-center items-center mx-6">
+            <ul className="flex items-center gap-1 sm:gap-2 lg:gap-4">
+              {navLinks.map((link) =>
+                link.external ? (
+                  <li key="order-now">
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-3 py-2 rounded-md text-sm font-medium transition-colors text-gray-700 hover:text-green-600 hover:bg-green-50/50"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ) : (
+                  <li key={link.path}>
+                    <Link
+                      to={link.path}
+                      className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                        isActive(link.path)
+                          ? 'text-blue-600 bg-blue-50'
+                          : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50/50'
+                      }`}
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                )
+              )}
+            </ul>
+          </nav>
 
           {/* Right Side Icons - Social Media */}
           <div className="flex items-center space-x-3">
@@ -101,33 +124,36 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Mobile Search Bar */}
-        <form onSubmit={handleSearch} className="md:hidden pb-4">
-          <div className="relative">
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search for medicines..."
-              className="w-full px-4 py-2 pl-10 pr-24 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
-            />
-            <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-            <button
-              type="submit"
-              className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-blue-600 text-white px-4 py-1 rounded-md text-sm"
-            >
-              Search
-            </button>
-          </div>
-        </form>
-
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t">
-            <a href="#" className="block py-2 text-gray-700 hover:text-blue-600">Medicines</a>
-            <a href="#" className="block py-2 text-gray-700 hover:text-blue-600">Healthcare</a>
-            <a href="#" className="block py-2 text-gray-700 hover:text-blue-600">Lab Tests</a>
-            <a href="#" className="block py-2 text-gray-700 hover:text-blue-600">Offers</a>
+            {navLinks.map((link) =>
+              link.external ? (
+                <a
+                  key="order-now"
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="block py-2.5 px-2 rounded-md font-medium transition-colors text-gray-700 hover:text-green-600 hover:bg-green-50"
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`block py-2.5 px-2 rounded-md font-medium transition-colors ${
+                    isActive(link.path)
+                      ? 'text-blue-600 bg-blue-50'
+                      : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              )
+            )}
             {/* Social Media Links in Mobile Menu */}
             <div className="flex items-center space-x-4 pt-4 border-t mt-4">
               <a

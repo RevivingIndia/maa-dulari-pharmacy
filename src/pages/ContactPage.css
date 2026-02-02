@@ -1,0 +1,490 @@
+/* 1. Contact Us Hero Section */
+.contact-hero {
+  position: relative;
+  background-color: #050a30;
+  min-height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+  overflow: hidden;
+}
+
+.contact-hero-content {
+  position: relative;
+  z-index: 10;
+}
+
+.contact-hero h1 {
+  font-size: 3rem;
+  margin: 0 0 10px 0;
+  font-weight: 700;
+}
+
+.contact-breadcrumb {
+  font-size: 1rem;
+}
+
+.contact-breadcrumb-home {
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.contact-breadcrumb-home:hover {
+  text-decoration: underline;
+}
+
+.contact-breadcrumb-separator {
+  margin: 0 8px;
+  opacity: 0.6;
+}
+
+.contact-breadcrumb-current {
+  opacity: 0.85;
+}
+
+/* Decorative icons - dark green #2d5a4c */
+.contact-hero-icon {
+  position: absolute;
+  color: #2d5a4c;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.contact-hero-icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.contact-hero-pie-chart {
+  left: 10%;
+  top: 40%;
+  width: 50px;
+  height: 50px;
+}
+
+.contact-hero-zig-zag {
+  left: 25%;
+  bottom: 20%;
+  width: 80px;
+  height: 30px;
+}
+
+.contact-hero-wavy-arrow {
+  right: 10%;
+  top: 30%;
+  width: 120px;
+  height: 80px;
+}
+
+@media (max-width: 768px) {
+  .contact-hero h1 {
+    font-size: 2.25rem;
+  }
+
+  .contact-hero-pie-chart {
+    width: 36px;
+    height: 36px;
+    left: 5%;
+  }
+
+  .contact-hero-zig-zag {
+    width: 50px;
+    height: 20px;
+  }
+
+  .contact-hero-wavy-arrow {
+    width: 70px;
+    height: 50px;
+  }
+}
+
+/* Contact Header & Information Section */
+.contact-info-section {
+  padding: 60px 20px 80px;
+  background: #ffffff;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.contact-info-intro {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 50px;
+}
+
+.contact-info-intro h2 {
+  color: #0a0a33;
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+}
+
+.contact-info-intro p {
+  color: #666;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.contact-info-wrapper {
+  display: flex;
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+.contact-info-card {
+  background: #0a0a33;
+  color: #ffffff;
+  padding: 40px;
+  border-radius: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-info-card h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin: 0 0 28px 0;
+}
+
+.contact-info-items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+}
+
+.contact-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.contact-info-icon-circle {
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-info-icon {
+  font-size: 1.1rem;
+  color: #ffffff;
+}
+
+.contact-info-item strong {
+  display: block;
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+
+.contact-info-item p {
+  margin: 0;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.contact-info-link {
+  color: #ffffff;
+  text-decoration: none;
+  opacity: 0.95;
+}
+
+.contact-info-link:hover {
+  text-decoration: underline;
+}
+
+.contact-info-whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #27c56e;
+  color: #ffffff;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  margin-top: 28px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.contact-info-whatsapp-btn:hover {
+  background: #22b363;
+  transform: translateY(-2px);
+}
+
+.contact-info-btn-icon {
+  font-size: 1.25rem;
+}
+
+.contact-info-form-card {
+  background: #f0f2f5;
+  padding: 40px;
+  border-radius: 20px;
+  flex: 1.5;
+}
+
+.contact-info-form-card h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #0a0a33;
+  margin: 0 0 24px 0;
+}
+
+.contact-info-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-info-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.contact-info-form input,
+.contact-info-form select,
+.contact-info-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  margin-bottom: 0;
+  box-sizing: border-box;
+}
+
+.contact-info-form input:focus,
+.contact-info-form select:focus,
+.contact-info-form textarea:focus {
+  outline: none;
+  border-color: #0a0a33;
+}
+
+.contact-info-form textarea {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  min-height: 120px;
+  resize: vertical;
+}
+
+.contact-info-send-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #27c56e;
+  color: #ffffff;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.contact-info-send-btn:hover {
+  background: #22b363;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+  .contact-info-wrapper {
+    flex-direction: column;
+  }
+
+  .contact-info-form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-info-section {
+    padding: 40px 16px 60px;
+  }
+
+  .contact-info-card,
+  .contact-info-form-card {
+    padding: 28px 24px;
+  }
+
+  .contact-info-intro h2 {
+    font-size: 1.75rem;
+  }
+}
+
+/* Map section */
+.contact-map-section {
+  padding: 0 20px 60px;
+  background: #ffffff;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.contact-map-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid #eee;
+}
+
+.contact-map-header {
+  padding: 28px 32px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #eee;
+}
+
+.contact-map-header h2 {
+  color: #0a0a33;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 16px 0;
+}
+
+.contact-map-info h3 {
+  color: #0a0a33;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+}
+
+.contact-map-address {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0 0 16px 0;
+}
+
+.contact-map-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.contact-map-directions-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  background: #0a0a33;
+  color: #ffffff;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.contact-map-directions-btn:hover {
+  background: #050a30;
+  transform: translateY(-2px);
+}
+
+.contact-map-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 50px;
+  font-size: 0.9rem;
+}
+
+.contact-map-stars {
+  color: #0a0a33;
+  font-weight: 700;
+}
+
+.contact-map-reviews {
+  color: #666;
+}
+
+.contact-map-embed-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+
+.contact-map-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+@media (max-width: 600px) {
+  .contact-map-section {
+    padding: 0 16px 40px;
+  }
+
+  .contact-map-header {
+    padding: 20px 20px;
+  }
+
+  .contact-map-header h2 {
+    font-size: 1.35rem;
+  }
+
+  .contact-map-info h3 {
+    font-size: 1.1rem;
+  }
+
+  .contact-map-address {
+    font-size: 0.9rem;
+  }
+}
+
+/* Order Now - spaced below contact/map */
+.contact-order-now {
+  padding: 48px 20px 56px;
+  background: #ffffff;
+  text-align: center;
+}
+
+.contact-order-now-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #25d366;
+  color: #ffffff;
+  padding: 16px 36px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-order-now-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 36px rgba(37, 211, 102, 0.45);
+}
+
+.contact-order-now-icon {
+  font-size: 1.4rem;
+}

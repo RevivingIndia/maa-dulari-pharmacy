@@ -33,7 +33,7 @@ const Footer = () => {
             <div className="space-y-2">
               <div className="flex items-start gap-2">
                 <FaMapMarkerAlt className="text-green-400 mt-0.5 flex-shrink-0" />
-                <span className="text-sm">Dinkar Golmbar, Aryan Kumar Road, Rajendra Nagar, Patna, Bihar, 800016</span>
+                <span className="text-sm">Dinkar golambar, Arya Kumar Rd, Rajendra Nagar, Patna, Bihar 800016</span>
               </div>
               <div className="flex items-center gap-2">
                 <FaEnvelope className="text-green-400" />

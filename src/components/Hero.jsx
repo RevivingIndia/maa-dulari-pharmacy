@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Autoplay, Pagination, Navigation } from 'swiper/modules'
 import 'swiper/css'
-import 'swiper/css/pagination'
-import 'swiper/css/navigation'
-import { FaTruck, FaShieldAlt, FaPills, FaWhatsapp, FaChevronLeft, FaSearch } from 'react-icons/fa'
+import { FaTruck, FaWhatsapp, FaChevronLeft } from 'react-icons/fa'
 
 const MESSAGE_DELAY_MS = 2000
 const RESET_DELAY_MS = 3500
@@ -84,202 +81,13 @@ function PhoneWhatsAppView({ conversation }) {
   )
 }
 
-// Tablet bubble (responsive text)
-function ChatBubbleTablet({ text, show, isDulari }) {
-  if (!show) return null
-  return (
-    <div className={`flex flex-shrink-0 animate-bubble-in ${isDulari ? 'justify-start' : 'justify-end'}`}>
-      <div
-        className={`rounded-lg sm:rounded-xl px-2 sm:px-3 py-1.5 sm:py-2 shadow-sm max-w-[90%] sm:max-w-[85%] ${
-          isDulari ? 'bg-white rounded-tl-none' : 'bg-[#DCF8C6] rounded-tr-none'
-        }`}
-      >
-        <p className="text-[10px] sm:text-xs text-gray-800 break-words">{text}</p>
-        <span className={`text-[9px] sm:text-[10px] block mt-0.5 ${isDulari ? 'text-gray-400' : 'text-gray-500 text-right'}`}>
-          {isDulari ? '10:24 AM' : '10:25 AM'}
-        </span>
-      </div>
-    </div>
-  )
-}
-
-// Tablet view – conversation appears message by message
-function TabletWhatsAppView({ conversation }) {
-  const visibleCount = useChatSequence(conversation)
-
-  return (
-    <div className="animate-device-in w-full h-full max-h-full flex items-center justify-center px-1">
-      <div className="w-full max-w-[280px] sm:max-w-[340px] md:max-w-[420px] lg:max-w-[480px] h-[200px] sm:h-[240px] md:h-[300px] lg:h-[320px] flex-shrink-0">
-        <div className="bg-neutral-800 rounded-xl sm:rounded-[2rem] p-2 sm:p-3 md:p-4 shadow-2xl border-4 sm:border-[8px] border-neutral-700 h-full flex flex-col min-h-0">
-          <div className="bg-white rounded-lg sm:rounded-xl overflow-hidden shadow-inner flex flex-1 min-h-0 flex-shrink-0">
-          <div className="w-1/3 min-w-0 bg-white border-r border-gray-200 flex flex-col flex-shrink-0 overflow-hidden">
-            <div className="bg-[#075E54] text-white px-2 sm:px-3 py-2 sm:py-3">
-              <div className="flex items-center gap-1 sm:gap-2">
-                <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-11 md:h-11 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
-                  <FaWhatsapp className="text-lg sm:text-xl md:text-2xl text-white" />
-                </div>
-                <div className="min-w-0 flex-1">
-                  <div className="font-semibold text-[10px] sm:text-xs md:text-sm truncate">Dulari</div>
-                  <div className="text-[9px] sm:text-xs text-white/80 truncate">Tablet</div>
-                </div>
-              </div>
-            </div>
-            <div className="p-1.5 sm:p-2 border-b border-gray-100 flex items-center gap-1 sm:gap-2 bg-gray-50">
-              <FaSearch className="text-gray-400 text-xs sm:text-sm flex-shrink-0" />
-              <span className="text-[10px] sm:text-xs text-gray-400 truncate">Search</span>
-            </div>
-            <div className="flex-1 p-1.5 sm:p-2 space-y-1 sm:space-y-1.5 min-h-0">
-              <div className="bg-[#E7F5E9] rounded-md sm:rounded-lg p-1.5 sm:p-2.5">
-                <div className="font-medium text-[10px] sm:text-xs text-gray-800 truncate">Dulari</div>
-                <div className="text-[9px] sm:text-[11px] text-gray-500 truncate">60 mins* 🚚</div>
-              </div>
-              <div className="rounded-md sm:rounded-lg p-1.5 sm:p-2.5 hover:bg-gray-50">
-                <div className="font-medium text-[10px] sm:text-xs text-gray-800 truncate">Support</div>
-                <div className="text-[9px] sm:text-[11px] text-gray-500 truncate">We're here</div>
-              </div>
-            </div>
-          </div>
-          <div className="flex-1 flex flex-col min-h-0 min-w-0">
-            <div className="bg-[#075E54] text-white px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 md:py-2.5 flex items-center gap-1 sm:gap-2 border-b border-[#054D45] flex-shrink-0">
-              <FaChevronLeft className="text-xs sm:text-sm flex-shrink-0" />
-              <div className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
-                <FaWhatsapp className="text-sm sm:text-base md:text-lg text-white" />
-              </div>
-              <div className="min-w-0 flex-1">
-                <div className="font-semibold text-[10px] sm:text-xs md:text-sm truncate">Dulari</div>
-                <div className="text-[9px] sm:text-xs text-white/80 truncate">online</div>
-              </div>
-            </div>
-            <div className="flex-1 bg-[#ECE5DD] p-2 sm:p-3 space-y-2 sm:space-y-3 overflow-y-auto overflow-x-hidden flex flex-col min-h-0">
-              {conversation?.map((msg, i) => (
-                <ChatBubbleTablet
-                  key={i}
-                  text={msg.text}
-                  show={i < visibleCount}
-                  isDulari={msg.from === 'dulari'}
-                />
-              ))}
-            </div>
-          </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-// Web bubble (responsive text)
-function ChatBubbleWeb({ text, show, isDulari }) {
-  if (!show) return null
-  return (
-    <div className={`flex flex-shrink-0 animate-bubble-in ${isDulari ? 'justify-start' : 'justify-end'}`}>
-      <div
-        className={`rounded-lg sm:rounded-xl px-2 sm:px-3 py-1.5 sm:py-2 md:py-2.5 shadow-sm max-w-[92%] sm:max-w-[90%] ${
-          isDulari ? 'bg-white rounded-tl-none' : 'bg-[#DCF8C6] rounded-tr-none'
-        }`}
-      >
-        <p className="text-[10px] sm:text-xs md:text-sm text-gray-800 break-words">{text}</p>
-        <span className={`text-[9px] sm:text-[10px] block mt-0.5 sm:mt-1 ${isDulari ? 'text-gray-400' : 'text-gray-500 text-right'}`}>
-          {isDulari ? '10:24 AM' : '10:25 AM'}
-        </span>
-      </div>
-    </div>
-  )
-}
-
-// Web/Desktop – conversation appears message by message
-function WebWhatsAppView({ conversation }) {
-  const visibleCount = useChatSequence(conversation)
-
-  return (
-    <div className="animate-device-in w-full h-full max-h-full flex items-center justify-center px-1">
-      <div className="w-full max-w-[300px] sm:max-w-[380px] md:max-w-[500px] lg:max-w-[540px] h-[200px] sm:h-[240px] md:h-[300px] lg:h-[340px] flex-shrink-0 flex flex-col min-h-0">
-        <div className="bg-gray-100 rounded-lg sm:rounded-xl overflow-hidden shadow-2xl border border-gray-300 sm:border-2 h-full flex flex-col min-h-0">
-        <div className="bg-gray-200/90 px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 md:py-2.5 flex items-center gap-2 sm:gap-3 border-b border-gray-300 flex-shrink-0">
-          <div className="flex gap-1 sm:gap-2 flex-shrink-0">
-            <span className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-[#FF5F57]" />
-            <span className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-[#FEBC2E]" />
-            <span className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-[#28C840]" />
-          </div>
-          <div className="flex-1 min-w-0 flex items-center gap-1 sm:gap-2 bg-white rounded-md sm:rounded-lg px-2 sm:px-3 py-1.5 sm:py-2 border border-gray-300">
-            <span className="text-gray-400 text-[10px] sm:text-xs flex-shrink-0">🔒</span>
-            <span className="text-[10px] sm:text-xs text-gray-600 truncate">web.whatsapp.com</span>
-          </div>
-        </div>
-        <div className="flex bg-white flex-1 min-h-0 flex-shrink-0 overflow-hidden">
-          <div className="w-[38%] min-w-0 border-r border-gray-200 flex flex-col bg-white flex-shrink-0 overflow-hidden">
-            <div className="bg-[#F0F2F5] px-2 sm:px-3 md:px-4 py-2 sm:py-3 flex items-center gap-2 sm:gap-3">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-11 md:h-11 rounded-full bg-[#075E54] flex items-center justify-center flex-shrink-0">
-                <FaWhatsapp className="text-sm sm:text-lg md:text-xl text-white" />
-              </div>
-              <div className="flex-1 min-w-0">
-                <div className="font-semibold text-[10px] sm:text-xs md:text-sm text-gray-800 truncate">WhatsApp</div>
-                <div className="text-[9px] sm:text-xs text-gray-500 truncate">Dulari</div>
-              </div>
-            </div>
-            <div className="flex-1 p-2 sm:p-3 space-y-1 min-h-0">
-              <div className="bg-[#E7F5E9] rounded-md sm:rounded-lg p-2 sm:p-3 flex items-center gap-1.5 sm:gap-2">
-                <div className="w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-[#075E54]/20 flex items-center justify-center flex-shrink-0">
-                  <FaWhatsapp className="text-[#075E54] text-xs sm:text-sm md:text-base" />
-                </div>
-                <div className="min-w-0 flex-1">
-                  <div className="font-medium text-[10px] sm:text-xs md:text-sm text-gray-800 truncate">Dulari</div>
-                  <div className="text-[9px] sm:text-xs text-gray-500 truncate">Verified</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="flex-1 flex flex-col min-h-0 min-w-0">
-            <div className="bg-[#F0F2F5] px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 md:py-2.5 flex items-center gap-2 sm:gap-3 border-b border-gray-200 flex-shrink-0">
-              <div className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-full bg-[#075E54] flex items-center justify-center flex-shrink-0">
-                <FaWhatsapp className="text-white text-xs sm:text-sm md:text-base" />
-              </div>
-              <div className="flex-1 min-w-0">
-                <div className="font-semibold text-[10px] sm:text-xs md:text-sm text-gray-800 truncate">Dulari</div>
-                <div className="text-[9px] sm:text-xs text-gray-500 truncate">online</div>
-              </div>
-            </div>
-            <div className="flex-1 bg-[#ECE5DD] p-2 sm:p-3 md:p-4 space-y-2 sm:space-y-3 overflow-y-auto overflow-x-hidden flex flex-col min-h-0 shrink-0">
-              {conversation?.map((msg, i) => (
-                <ChatBubbleWeb
-                  key={i}
-                  text={msg.text}
-                  show={i < visibleCount}
-                  isDulari={msg.from === 'dulari'}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-      </div>
-    </div>
-  )
-}
-
-// Conversations per slide – show how to order medicine via chat
+// Conversation for the hero – show how to order medicine via chat
 const SLIDE_1_CHAT = [
   { from: 'dulari', text: 'Namaste! 👋 Send prescription or medicine list. We care like family – dawa bhi, dua bhi.' },
   { from: 'user', text: 'Hi, I need medicines for my mother' },
   { from: 'dulari', text: 'Please send the prescription. We\'ll arrange everything. Dawa bhi, dua bhi! 🙏' },
   { from: 'user', text: 'Sending now 📎' },
   { from: 'dulari', text: 'Received! We\'ll confirm shortly. Thank you!' },
-]
-
-const SLIDE_2_CHAT = [
-  { from: 'dulari', text: '60 mins* delivery! 🚚 Share prescription to get started.' },
-  { from: 'user', text: 'I\'ll send my prescription now' },
-  { from: 'dulari', text: 'Got it! Checking availability...' },
-  { from: 'dulari', text: '✅ All in stock. Total ₹850. Confirm to place order?' },
-  { from: 'user', text: 'Yes please confirm' },
-  { from: 'dulari', text: 'Order confirmed! Delivery in 60 mins*. Thank you! 🙏' },
-]
-
-const SLIDE_3_CHAT = [
-  { from: 'dulari', text: 'Welcome! We verify every prescription. Genuine medicines, safe delivery.' },
-  { from: 'user', text: 'Ordering for family. Prescription attached.' },
-  { from: 'dulari', text: 'Thank you! Our pharmacist has verified. All genuine. ✅' },
-  { from: 'dulari', text: 'Order #MD456. Delivery in 2 hrs. Thank you for trusting us!' },
 ]
 
 const Hero = () => {
@@ -292,65 +100,20 @@ const Hero = () => {
       description: 'Maa Dulari Pharmacy – jahaan sirf medicine nahi, parivaar jaisa khayal bhi milta hai.',
       image: 'bg-gradient-to-r from-blue-600 to-teal-600',
       icon: <FaTruck className="text-6xl text-white" />,
-      rightView: 'phone',
       conversation: SLIDE_1_CHAT,
     },
-    {
-      id: 2,
-      label: 'Trust',
-      title: 'Bharosa Har Dawa Mein',
-      subtitle: '60 minutes* mein aapke darwaze par dawa',
-      description: 'Fast, reliable delivery from trusted local pharmacies so you never have to stand in line again.',
-      image: 'bg-gradient-to-r from-teal-600 to-blue-600',
-      icon: <FaShieldAlt className="text-6xl text-white" />,
-      rightView: 'tablet',
-      conversation: SLIDE_2_CHAT,
-    },
-    {
-      id: 3,
-      label: 'Professional',
-      title: 'Trusted Medicines with Care',
-      subtitle: 'Experienced team, professional guidance, and careful handling',
-      description:
-        'From prescription check to doorstep delivery, every step is monitored so you and your family always get the right medicine with the right care.',
-      image: 'bg-gradient-to-r from-blue-600 to-cyan-600',
-      icon: <FaPills className="text-6xl text-white" />,
-      rightView: 'web',
-      conversation: SLIDE_3_CHAT,
-    },
   ]
-
-  const renderRightView = (slide) => {
-    const conversation = slide?.conversation || SLIDE_1_CHAT
-    switch (slide?.rightView) {
-      case 'phone':
-        return <PhoneWhatsAppView conversation={conversation} />
-      case 'tablet':
-        return <TabletWhatsAppView conversation={conversation} />
-      case 'web':
-        return <WebWhatsAppView conversation={conversation} />
-      default:
-        return <PhoneWhatsAppView conversation={conversation} />
-    }
-  }
 
   return (
     <section className="relative w-full" style={{ overflow: 'hidden' }}>
       <Swiper
-        modules={[Autoplay, Pagination, Navigation]}
+        modules={[]}
         spaceBetween={0}
         slidesPerView={1}
-        autoplay={{
-          delay: 7000,
-          disableOnInteraction: false,
-        }}
         speed={400}
-        pagination={{
-          clickable: true,
-          dynamicBullets: true,
-        }}
-        navigation={true}
-        loop={true}
+        pagination={false}
+        navigation={false}
+        loop={false}
         className="hero-swiper !h-[480px] sm:!h-[520px] md:!h-[540px] lg:!h-[600px]"
       >
         {slides.map((slide) => (
@@ -359,7 +122,7 @@ const Hero = () => {
               {/* Mobile: device on top (order-1). Desktop: device right (md:order-2) */}
               <div className="flex-shrink-0 flex items-center justify-center w-full py-2 md:py-0 md:w-auto md:flex-1 md:min-h-0 order-1 md:order-2 h-[240px] sm:h-[260px] md:h-full">
                 <div className="h-full flex items-center justify-center w-full px-1 max-w-full">
-                  {renderRightView(slide)}
+                  <PhoneWhatsAppView conversation={slide.conversation} />
                 </div>
               </div>
               {/* Mobile: text below (order-2). Desktop: text left (md:order-1) */}

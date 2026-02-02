@@ -1,0 +1,577 @@
+.about-hero {
+  position: relative;
+  min-height: 100vh;
+  background: url('/360_F_276803150_yUZGcTLjJErZdmLw0GhDzARQY91S6yrv.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.about-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(10, 20, 60, 0.85),
+    rgba(10, 20, 60, 0.85)
+  );
+}
+
+.about-hero-content {
+  position: relative;
+  max-width: 1000px;
+  text-align: center;
+  padding: 20px;
+  z-index: 2;
+}
+
+.about-badge {
+  display: inline-block;
+  padding: 8px 18px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 30px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.about-hero-content h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.about-hero-content h1 .highlight {
+  color: #4da3ff;
+}
+
+.about-hero-desc {
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  opacity: 0.9;
+}
+
+.about-features {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.about-feature-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 20px 25px;
+  width: 260px;
+  text-align: center;
+}
+
+.about-feature-card .icon {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.about-feature-card h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.about-feature-card p {
+  font-size: 14px;
+  opacity: 0.85;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .about-hero-content h1 {
+    font-size: 36px;
+  }
+}
+
+/* Mission & Promise section */
+.about-mission {
+  padding: 120px 20px;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+}
+
+.about-mission-container {
+  max-width: 900px;
+  text-align: center;
+}
+
+.about-mission-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 30px;
+  border: 1px solid #d6dcff;
+  background: #f6f8ff;
+  color: #1c2a7a;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 28px;
+  box-shadow: 0 2px 8px rgba(28, 42, 122, 0.08);
+}
+
+.about-mission-badge-icon {
+  font-size: 14px;
+}
+
+.about-mission-container h2 {
+  font-size: 42px;
+  font-weight: 700;
+  color: #0b1444;
+  margin-bottom: 24px;
+}
+
+.about-mission-container p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #3b4470;
+  margin-bottom: 18px;
+}
+
+@media (max-width: 768px) {
+  .about-mission-container h2 {
+    font-size: 32px;
+  }
+}
+
+/* What We Do section */
+.about-what-we-do {
+  background: radial-gradient(circle at top, #0b0f3b, #06082a);
+  padding: 120px 20px;
+  color: #ffffff;
+}
+
+.about-wwd-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-wwd-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 28px;
+}
+
+.about-what-we-do h2 {
+  font-size: 44px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.about-wwd-subtitle {
+  font-size: 16px;
+  color: #a8b0ff;
+  margin-bottom: 70px;
+}
+
+.about-wwd-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.about-wwd-card {
+  background: #ffffff;
+  color: #1a1f4a;
+  padding: 40px 30px;
+  border-radius: 22px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+}
+
+.about-wwd-icon-box {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 22px;
+  background: #121a4f;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #ffffff;
+}
+
+.about-wwd-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.about-wwd-card p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #4a4f7a;
+}
+
+@media (max-width: 900px) {
+  .about-wwd-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .about-what-we-do h2 {
+    font-size: 34px;
+  }
+}
+
+/* Why That Matters section */
+.about-why-matters {
+  background: #ffffff;
+  padding: 120px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.about-why-matters-content {
+  max-width: 900px;
+  text-align: center;
+}
+
+.about-why-matters-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 30px;
+  background: #f5f6fb;
+  border: 1px solid #d8dcf5;
+  color: #1c2a7a;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 28px;
+}
+
+.about-why-matters-content h2 {
+  font-size: 42px;
+  font-weight: 700;
+  color: #0b1444;
+  margin-bottom: 28px;
+}
+
+.about-why-matters-content p {
+  font-size: 16px;
+  line-height: 1.75;
+  color: #3f4670;
+  margin-bottom: 18px;
+}
+
+@media (max-width: 768px) {
+  .about-why-matters-content h2 {
+    font-size: 32px;
+  }
+}
+
+/* How We Work (Our Process) section */
+.about-process {
+  background: radial-gradient(circle at top, #0b0f3b, #06082a);
+  padding: 120px 20px;
+  color: #ffffff;
+}
+
+.about-process-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-process-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 28px;
+}
+
+.about-process h2 {
+  font-size: 44px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.about-process-subtitle {
+  font-size: 16px;
+  color: #a8b0ff;
+  margin-bottom: 70px;
+}
+
+.about-process-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.about-process-card {
+  background: #ffffff;
+  color: #1a1f4a;
+  padding: 50px 30px 40px;
+  border-radius: 22px;
+  position: relative;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+}
+
+.about-process-step-number {
+  position: absolute;
+  top: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 44px;
+  height: 44px;
+  background: #121a4f;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.about-process-icon-circle {
+  width: 64px;
+  height: 64px;
+  margin: 10px auto 22px;
+  background: #e9ebf3;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+}
+
+.about-process-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.about-process-card p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #4a4f7a;
+}
+
+@media (max-width: 900px) {
+  .about-process-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .about-process h2 {
+    font-size: 34px;
+  }
+}
+
+/* Our Core Values section */
+.about-values {
+  background: #ffffff;
+  padding: 110px 20px;
+}
+
+.about-values-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+
+.about-values-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 30px;
+  background: #f2f3f8;
+  border: 1px solid #d9dcee;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0b1354;
+  position: absolute;
+  right: 0;
+  top: -40px;
+}
+
+.about-values-container h2 {
+  font-size: 44px;
+  font-weight: 700;
+  color: #0b1354;
+  margin-bottom: 14px;
+}
+
+.about-values-subtitle {
+  font-size: 17px;
+  color: #6a7196;
+  margin-bottom: 80px;
+}
+
+.about-values-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 36px;
+}
+
+.about-values-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 22px;
+  padding: 34px;
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #e6e8f3;
+  box-shadow: 0 20px 45px rgba(14, 20, 70, 0.08);
+  text-align: left;
+}
+
+.about-values-icon {
+  width: 56px;
+  height: 56px;
+  background: #0b1354;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.about-values-card h3 {
+  font-size: 19px;
+  font-weight: 700;
+  color: #0b1354;
+  margin-bottom: 8px;
+}
+
+.about-values-card p {
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: #5f6685;
+}
+
+@media (max-width: 900px) {
+  .about-values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-values-badge {
+    position: static;
+    margin-bottom: 20px;
+  }
+
+  .about-values-container h2 {
+    font-size: 34px;
+  }
+}
+
+/* Our Commitment to You CTA section */
+.about-commitment {
+  background: radial-gradient(
+    circle at top,
+    #151a6a,
+    #0b0f45 70%
+  );
+  padding: 120px 20px;
+  color: #ffffff;
+}
+
+.about-commitment-container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-commitment-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 28px;
+}
+
+.about-commitment h2 {
+  font-size: 44px;
+  font-weight: 700;
+  margin-bottom: 26px;
+}
+
+.about-commitment-text {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #b7bddb;
+  max-width: 760px;
+  margin: 0 auto 50px;
+}
+
+.about-commitment-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.about-commitment-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 14px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.about-commitment-btn-whatsapp {
+  background: #25d366;
+  color: #ffffff;
+  box-shadow: 0 14px 30px rgba(37, 211, 102, 0.35);
+}
+
+.about-commitment-btn-whatsapp:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 36px rgba(37, 211, 102, 0.45);
+}
+
+.about-commitment-btn-call {
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.about-commitment-btn-call:hover {
+  background: rgba(255, 255, 255, 0.16);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .about-commitment h2 {
+    font-size: 34px;
+  }
+
+  .about-commitment-text {
+    font-size: 15.5px;
+  }
+}
