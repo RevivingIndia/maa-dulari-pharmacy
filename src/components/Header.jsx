@@ -10,6 +10,7 @@ const navLinks = [
   { label: 'FAQs', path: '/faqs' },
   { label: 'Blog', path: '/blog' },
   { label: 'Contact Us', path: '/contact' },
+  { label: 'Refund Policy', path: '/refund-policy' },
   { label: 'Order Now', href: 'https://api.whatsapp.com/send/?phone=919798133879&text&type=phone_number&app_absent=0', external: true },
 ]
 

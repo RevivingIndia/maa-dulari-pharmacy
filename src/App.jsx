@@ -6,6 +6,7 @@ import AboutPage from './pages/AboutPage'
 import ServicesPage from './pages/ServicesPage'
 import ContactPage from './pages/ContactPage'
 import FAQPage from './pages/FAQPage'
+import RefundPolicyPage from './pages/RefundPolicyPage'
 import BlogPostPage from './pages/BlogPostPage'
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/faqs" element={<FAQPage />} />
+        <Route path="/refund-policy" element={<RefundPolicyPage />} />
         <Route path="/blog/:id" element={<BlogPostPage />} />
       </Routes>
     </>
