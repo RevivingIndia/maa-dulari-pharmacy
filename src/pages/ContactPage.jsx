@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaWhatsapp, FaPaperPlane } from 'react-icons/fa'
+import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaWhatsapp } from 'react-icons/fa'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import './ContactPage.css'
@@ -38,70 +38,43 @@ function ContactPage() {
         </div>
       </section>
 
-      <section className="contact-info-section">
-        <div className="contact-info-intro">
-          <h2>Contact Dulari Care</h2>
-          <p>Ready to experience our pharmacy services? Get in touch with us today.</p>
+      <section className="contact-info-grid">
+        <div className="contact-info-block">
+          <div className="contact-icon-wrap">
+            <FaMapMarkerAlt className="contact-grid-icon" />
+          </div>
+          <div className="contact-text-wrap">
+            <h4>Visit Us</h4>
+            <p>
+              Dinkar golambar, Arya Kumar Rd,<br />
+              Rajendra Nagar, Patna, Bihar 800016
+            </p>
+          </div>
         </div>
 
-        <div className="contact-info-wrapper">
-          <div className="contact-info-card">
-            <h3>Visit Our Pharmacy</h3>
-            <div className="contact-info-items">
-              <div className="contact-info-item">
-                <div className="contact-info-icon-circle">
-                  <FaMapMarkerAlt className="contact-info-icon" />
-                </div>
-                <div>
-                  <strong>Our Location</strong>
-                  <p>Dinkar golambar, Arya Kumar Rd, Rajendra Nagar, Patna, Bihar 800016</p>
-                </div>
-              </div>
-              <div className="contact-info-item">
-                <div className="contact-info-icon-circle">
-                  <FaPhone className="contact-info-icon" />
-                </div>
-                <div>
-                  <strong>Call Us</strong>
-                  <p><a href="tel:+919798133879" className="contact-info-link">+91 9798133879</a></p>
-                </div>
-              </div>
-              <div className="contact-info-item">
-                <div className="contact-info-icon-circle">
-                  <FaEnvelope className="contact-info-icon" />
-                </div>
-                <div>
-                  <strong>Email Us</strong>
-                  <p><a href="mailto:care@dularicare.com" className="contact-info-link">care@dularicare.com</a></p>
-                </div>
-              </div>
-            </div>
-            <a
-              href="https://wa.me/919798133879?text=Hello%2C%20I%20would%20like%20to%20order%20medicines%20from%20Dulari."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="contact-info-whatsapp-btn"
-            >
-              <FaWhatsapp className="contact-info-btn-icon" /> WhatsApp Us
-            </a>
+        <div className="contact-info-block">
+          <div className="contact-icon-wrap">
+            <FaPhone className="contact-grid-icon" />
           </div>
+          <div className="contact-text-wrap">
+            <h4>Call us</h4>
+            <p>
+              <a href="tel:+919798133879" className="contact-grid-link">+91 97981 33879</a>
+              <br />
+              <a href="tel:+919876543210" className="contact-grid-link">+91 98765 43210</a>
+            </p>
+          </div>
+        </div>
 
-          <div className="contact-info-form-card">
-            <h3>Send Us a Message</h3>
-            <form className="contact-info-form" onSubmit={(e) => e.preventDefault()}>
-              <div className="contact-info-form-grid">
-                <input type="text" placeholder="Your Full Name" aria-label="Full Name" />
-                <input type="email" placeholder="Your Email Address" aria-label="Email" />
-                <input type="tel" placeholder="Your Phone Number" aria-label="Phone" />
-                <select aria-label="Select an option">
-                  <option>Select an option</option>
-                </select>
-              </div>
-              <textarea placeholder="Tell us how we can help you..." rows={5} aria-label="Message" />
-              <button type="submit" className="contact-info-send-btn">
-                Send Message <FaPaperPlane className="contact-info-btn-icon" />
-              </button>
-            </form>
+        <div className="contact-info-block">
+          <div className="contact-icon-wrap">
+            <FaEnvelope className="contact-grid-icon" />
+          </div>
+          <div className="contact-text-wrap">
+            <h4>Email us</h4>
+            <p>
+              <a href="mailto:care@dularicare.com" className="contact-grid-link">care@dularicare.com</a>
+            </p>
           </div>
         </div>
       </section>

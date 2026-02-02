@@ -12,7 +12,7 @@ const faqItems = [
   },
   {
     question: 'Can I pay online?',
-    answer: 'Yes. We accept online payment options for your convenience. You can also pay on delivery at your doorstep.',
+    answer: "We do not have an online checkout. After you confirm your order on WhatsApp, we'll share the secure payment options available for your area (UPI, bank transfer, or cash/card on pickup/delivery where available).",
   },
   {
     question: 'Do you accept prescriptions?',

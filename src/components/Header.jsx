@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { FaBars, FaTimes, FaPhone, FaWhatsapp } from 'react-icons/fa'
 import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa'
-import { MdLocalPharmacy } from 'react-icons/md'
 
 const navLinks = [
   { label: 'Home', path: '/' },
@@ -28,12 +27,8 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <MdLocalPharmacy className="text-2xl md:text-4xl text-blue-600" />
-            <div>
-              <h1 className="text-lg md:text-2xl font-bold text-gradient">Dulari</h1>
-              <p className="text-xs text-gray-600 hidden sm:block">dawa bhi dua bhi</p>
-            </div>
+          <Link to="/" className="flex items-center">
+            <img src="/logo.jpg" alt="Dulari - dawa bhi dua bhi" className="h-10 md:h-12 w-auto object-contain" />
           </Link>
 
           {/* Desktop Nav Menu */}
