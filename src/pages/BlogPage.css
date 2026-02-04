@@ -1,0 +1,139 @@
+/* Hero - match theme */
+.blog-page-hero {
+  background-color: #050a30;
+  min-height: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.blog-page-hero-content {
+  padding: 40px 20px;
+}
+
+.blog-page-hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+}
+
+.blog-page-breadcrumb {
+  font-size: 0.95rem;
+}
+
+.blog-page-breadcrumb-home {
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.blog-page-breadcrumb-home:hover {
+  text-decoration: underline;
+}
+
+.blog-page-breadcrumb-sep {
+  margin: 0 8px;
+  opacity: 0.6;
+}
+
+.blog-page-breadcrumb-current {
+  opacity: 0.85;
+}
+
+/* Blog listing */
+.blog-page-section {
+  padding: 60px 20px 80px;
+  background: #ffffff;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.blog-page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.blog-page-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.blog-page-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0a0a33;
+  line-height: 1.3;
+}
+
+.blog-page-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.blog-page-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  cursor: pointer;
+}
+
+.blog-page-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  border: 1px solid #eee;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-page-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.08);
+}
+
+.blog-page-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.blog-page-card-content {
+  padding: 20px;
+}
+
+.blog-page-card-content h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #0a0a33;
+  margin: 0 0 12px 0;
+  line-height: 1.4;
+}
+
+.blog-page-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 8px;
+}
+
+.blog-page-date {
+  font-size: 0.8rem;
+  color: #9ca3af;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .blog-page-hero h1 {
+    font-size: 2rem;
+  }
+
+  .blog-page-header h2 {
+    font-size: 1.5rem;
+  }
+}
